@@ -3,7 +3,7 @@ require("dotenv").config();
 const siteMetadata = {
   title: `Trong Nguyen's Desk`,
   name: `Trong Nguyen`,
-  siteUrl: `https://trongnguyen.co`,
+  siteUrl: `https://afolios.netlify.app/`,
   description: `Product Designer who's learning to write and express thoughts. Currently, I'm building Design System and improving Web Experience at Carousell.`,
   hero: {
     heading: `Hi, I’m Trong, <br/>product designer.`,
