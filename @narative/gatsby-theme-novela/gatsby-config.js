@@ -116,6 +116,7 @@ module.exports = ({
                       date
                       slug
                       title
+                      body
                       author
                       secret
                     }
@@ -133,6 +134,7 @@ module.exports = ({
                       date
                       slug
                       title
+                      body
                       author {
                         name
                       }
@@ -151,6 +153,7 @@ module.exports = ({
                       date
                       slug
                       title
+                      body
                       author
                       secret
                     }
@@ -163,6 +166,7 @@ module.exports = ({
                       date
                       slug
                       title
+                      body
                       author {
                         name
                       }
