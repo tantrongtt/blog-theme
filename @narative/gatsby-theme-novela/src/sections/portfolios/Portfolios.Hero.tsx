@@ -55,13 +55,16 @@ const PortfoliosHero: React.FC<IAuthor> = ({ authors }) => {
           <p>
             In the free time, I share my love for design in
             <InternalLink to={`/design-tips`} title={`Visual storytelling`}>
-              the visual language.
+              the visual language
             </InternalLink>
-          </p>
-          <p>
-            And making stuff for my side project
-            <Anchor target="_blank" href="https://awesomefigmatips.com">
-              Awesome Figma Tips.
+          
+            , and making stuff for my side project
+            <Anchor target="_blank" rel="noopener nofollow" data-a11y="false" href="https://awesomefigmatips.com">
+              Awesome Figma Tips
+            </Anchor>
+            &nbsp; &
+            <Anchor target="_blank" rel="noopener nofollow" data-a11y="false" href="https://www.pafolios.com/">
+              Pafolios.
             </Anchor>
           </p>
         </InfoText>
