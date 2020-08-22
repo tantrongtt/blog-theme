@@ -20,9 +20,9 @@ const siteQuery = graphql`
         title
         date(formatString: "DD MMMM YYYY")
         slug
+        secret
       }
     }
-    totalCount
   }
   allSite {
     edges {
@@ -44,6 +44,7 @@ const Archive = ({ location }) => {
 
   const result = useStaticQuery(siteQuery);
   const siteSEO = result.allSite.edges[0].node.siteMetadata;
+  const articlesThatArentSecret = result.allArticle.edges.filter(edge => !edge.node.secret);
 
   return (
     <Layout>
@@ -55,12 +56,12 @@ const Archive = ({ location }) => {
       />
       <PageHero
         heading="Archives"
-        subtitle={result.allArticle.totalCount + " articles."}
+        subtitle={articlesThatArentSecret.length + " articles."}
         maxWidth={siteSEO.hero.maxWidth}
       />
       <Section narrow>
         <Wrapper>
-          {result.allArticle.edges.map((item, index) => (
+          {articlesThatArentSecret.map((item, index) => (
             <ArticlesItem to={item.node.slug} data-a11y="false" key={index}>
               <Date>{item.node.date}</Date>
               <Title>{item.node.title}</Title>
