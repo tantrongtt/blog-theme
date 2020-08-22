@@ -23,6 +23,9 @@ const authorQuery = graphql`
         }
       }
     }
+    allArticle {
+      totalCount
+    }
   }
 `;
 
@@ -33,6 +36,7 @@ const ArticlesHero: React.FC<IAuthor> = ({ authors }) => {
 
   const results = useStaticQuery(authorQuery);
   const hero = results.site.edges[0].node.siteMetadata.hero;
+  const numberOrPost = results.allArticle.totalCount;
   
   // Hide author
   // const featuredAuthor = authors.find(author => author.featured);
@@ -47,7 +51,7 @@ const ArticlesHero: React.FC<IAuthor> = ({ authors }) => {
   return (
     <Section narrow id="Articles__Hero">
       <HeadingContainer style={{ maxWidth: `${hero.maxWidth}px` }}>
-        <HeroHeading dangerouslySetInnerHTML={{ __html: hero.writingHeading }} />
+        <HeroHeading>{hero.writingHeading} <Sup>{"(" + numberOrPost + " posts)"}</Sup> </HeroHeading>
         <InfoText>
           Without words, apps would be an unusable jumble of shapes and icons.
           <Anchor to="/archive" data-a11y="false">
@@ -71,9 +75,9 @@ const HeadingContainer = styled.div`
   ${mediaqueries.tablet`
   width: 100%;
   `}
-  `;
+`;
   
-  const HeroHeading = styled.h1`
+const HeroHeading = styled.h1`
   font-style: normal;
   font-weight: ${p => p.theme.fontsWeight.bold};
   font-size: 64px;
@@ -90,7 +94,16 @@ const HeadingContainer = styled.div`
   `}
 
   ${mediaqueries.phablet`
-    font-size: 56px;
+    font-size: 48px;
+  `}
+`;
+
+const Sup = styled.sup`
+  vertical-align: super;
+  font-size: 20px;
+
+  ${mediaqueries.phablet`
+    font-size: 16px;
   `}
 `;
 
