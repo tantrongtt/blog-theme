@@ -70,7 +70,7 @@ module.exports = ({
                       date: edge.node.date,
                       url: site.siteMetadata.siteUrl + edge.node.slug,
                       guid: site.siteMetadata.siteUrl + edge.node.slug,
-                      // custom_elements: [{ "content:encoded": edge.node.body }],
+                      custom_elements: [{ "content:encoded": edge.node.body }],
                       author: edge.node.author,
                     };
                   });
@@ -84,7 +84,7 @@ module.exports = ({
                       date: edge.node.date,
                       url: site.siteMetadata.siteUrl + edge.node.slug,
                       guid: site.siteMetadata.siteUrl + edge.node.slug,
-                      // custom_elements: [{ "content:encoded": edge.node.body }],
+                      custom_elements: [{ "content:encoded": edge.node.body }],
                       author: edge.node.author,
                     };
                   });
@@ -99,7 +99,7 @@ module.exports = ({
                       date: edge.node.date,
                       url: site.siteMetadata.siteUrl + edge.node.slug,
                       guid: site.siteMetadata.siteUrl + edge.node.slug,
-                      // custom_elements: [{ "content:encoded": edge.node.body }],
+                      custom_elements: [{ "content:encoded": edge.node.body }],
                       author: edge.node.author,
                     };
                   });
