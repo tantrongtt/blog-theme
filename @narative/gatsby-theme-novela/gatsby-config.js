@@ -25,7 +25,7 @@ module.exports = ({
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: `gatsby-plugin-feed-mdx`,
       options: {
         query: `
           {
@@ -118,6 +118,7 @@ module.exports = ({
                       title
                       author
                       secret
+                      body
                     }
                   }
                 }
@@ -137,6 +138,7 @@ module.exports = ({
                         name
                       }
                       secret
+                      body
                     }
                   }
                 }
@@ -153,6 +155,7 @@ module.exports = ({
                       title
                       author
                       secret
+                      body
                     }
                   }
                 }
@@ -167,6 +170,7 @@ module.exports = ({
                         name
                       }
                       secret
+                      body
                     }
                   }
                 }
