@@ -175,6 +175,20 @@ const ImageContainer = styled.div<{ narrow: boolean; gridLayout: string }>`
     height: 100%;
   }
 
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.25s var(--ease-out-quad);
+    box-shadow: 0 30px 40px -20px rgba(41, 65, 69, 0.32),
+      0 30px 30px -30px rgba(41, 65, 69, 0.52);
+  }
+
   ${mediaqueries.tablet`
     height: 200px;
     margin-bottom: 35px;
@@ -265,9 +279,10 @@ const ArticleLink = styled(Link)`
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
   &:hover ${ImageContainer}, &:focus ${ImageContainer} {
+    &::after {
+      opacity: 1;
+    }
     transform: translateY(-1px);
-    box-shadow: 0 30px 40px -20px rgba(41, 65, 69, 0.32),
-      0 30px 30px -30px rgba(41, 65, 69, 0.52);
   }
 
   &:hover h2,
