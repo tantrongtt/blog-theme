@@ -395,7 +395,7 @@ const Grid = css`
     &.Col2 {
       grid-template-columns: 1fr 1fr;
       
-      ${mediaqueries.phone`
+      ${mediaqueries.tablet`
         grid-template-columns: 1fr;
       `};
     }
@@ -403,7 +403,7 @@ const Grid = css`
     &.Col3 {
       grid-template-columns: 1fr 1fr 1fr;
       
-      ${mediaqueries.phone`
+      ${mediaqueries.tablet`
         grid-template-columns: 1fr;
       `};
     }
