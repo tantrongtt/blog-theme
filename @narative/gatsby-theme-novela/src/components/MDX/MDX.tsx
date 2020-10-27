@@ -294,6 +294,11 @@ const ImageCSS = css`
     `};
   }
 
+  div.Grid_Space {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+  }
+
   div.Image__Small {
     display: inline-block;
     position: relative;
@@ -385,7 +390,7 @@ const Grid = css`
     display: grid;
     grid-gap: 8px;
     position: relative;
-    margin: 15px auto 50px;
+    margin-bottom: 8px;
     
     &.Col2 {
       grid-template-columns: 1fr 1fr;
