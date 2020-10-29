@@ -391,6 +391,12 @@ const Grid = css`
     grid-gap: 8px;
     position: relative;
     margin-bottom: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    &.Margin_Small {
+      margin-bottom: 48px;
+    }
     
     &.Col2 {
       grid-template-columns: 1fr 1fr;
