@@ -5,6 +5,7 @@ import mediaqueries from "@styles/media";
 import { Link } from 'gatsby';
 
 import Section from "@components/Section";
+import Headings from "@components/Headings";
 import SEO from "@components/SEO";
 import Layout from "@components/Layout";
 import ArticlesGradient from "@components/ArticlesGradient";
@@ -18,7 +19,7 @@ const siteQuery = graphql`
     edges {
       node {
         title
-        date(formatString: "DD MMMM YYYY")
+        date(formatString: "MMM DD, YYYY")
         slug
         secret
       }
@@ -45,7 +46,15 @@ const Archive = ({ location }) => {
   const result = useStaticQuery(siteQuery);
   const siteSEO = result.allSite.edges[0].node.siteMetadata;
   const articlesThatArentSecret = result.allArticle.edges.filter(edge => !edge.node.secret);
-
+  const reducer = (accumulator, article) => {
+    const year = (new window.Date(article.node.date)).getFullYear();
+    accumulator[year] = accumulator[year] ?? [];
+    accumulator[year].push(article.node);
+    return accumulator;
+  }
+  const articlesByAscYear = articlesThatArentSecret.reduce(reducer, {});
+  const decsYears = Object.keys(articlesByAscYear).reverse();
+  
   return (
     <Layout>
       <SEO
@@ -61,11 +70,18 @@ const Archive = ({ location }) => {
       />
       <Section narrow>
         <Wrapper>
-          {articlesThatArentSecret.map((item, index) => (
-            <ArticlesItem to={item.node.slug} data-a11y="false" key={index}>
-              <Date>{item.node.date}</Date>
-              <Title>{item.node.title}</Title>
-            </ArticlesItem>
+          {decsYears.map((year, index) => (
+            <ArticlesWrap key={index}>
+              <Year>{year}</Year>
+              <ArticlesInYear>
+                {articlesByAscYear[year].map((item, index) => (
+                  <ArticlesItem to={item.slug} data-a11y="false" key={index}>
+                    <Date>{item.date}</Date>
+                    <Title>{item.title}</Title>
+                  </ArticlesItem>
+                ))}
+              </ArticlesInYear>
+            </ArticlesWrap>
           ))}
         </Wrapper>
       </Section>
@@ -76,14 +92,36 @@ const Archive = ({ location }) => {
 
 export default Archive;
 
+const ArticlesWrap = styled.div`
+  position: relative;
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  
+  ${mediaqueries.tablet`
+    grid-template-columns: 1fr;
+  `};
+`;
+
+const ArticlesInYear = styled.div`
+  margin-bottom: 48px;
+`;
+
+const Year = styled(Headings.h2)`
+  color: ${p => p.theme.colors.secondary};
+
+  ${mediaqueries.tablet`
+    margin-bottom: 32px;
+    font-size: 48px;
+  `};
+`;
+
 const ArticlesItem = styled(Link)`
   z-index: 1;
   position: relative;
   display: grid;
-  grid-template-columns: 160px 1fr;
-  // grid-template-columns: 1fr;
+  grid-template-columns: 120px 1fr;
   column-gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 
   ${mediaqueries.tablet`
     grid-template-columns: 1fr;
@@ -109,7 +147,7 @@ const Title = styled.h2`
   }
 
   ${mediaqueries.tablet`
-    font-size: 28px;
+    font-size: 26px;
     padding-top: 8px;
   `};
 
