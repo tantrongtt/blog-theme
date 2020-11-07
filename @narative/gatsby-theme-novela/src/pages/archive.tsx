@@ -95,7 +95,7 @@ export default Archive;
 const ArticlesWrap = styled.div`
   position: relative;
   display: grid;
-  grid-template-columns: 25% 1fr;
+  grid-template-columns: 20% 1fr;
   
   ${mediaqueries.tablet`
     grid-template-columns: 1fr;
@@ -154,5 +154,5 @@ const Title = styled.h2`
 `;
 
 const Wrapper = styled.div`
-  margin-bottom: 240px;
+  margin-bottom: 120px;
 `;
