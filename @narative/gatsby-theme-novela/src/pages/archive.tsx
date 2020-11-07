@@ -47,7 +47,7 @@ const Archive = ({ location }) => {
   const siteSEO = result.allSite.edges[0].node.siteMetadata;
   const articlesThatArentSecret = result.allArticle.edges.filter(edge => !edge.node.secret);
   const reducer = (accumulator, article) => {
-    const year = (new window.Date(article.node.date)).getFullYear();
+    const year = (new Date(article.node.date)).getFullYear();
     accumulator[year] = accumulator[year] ?? [];
     accumulator[year].push(article.node);
     return accumulator;
@@ -76,7 +76,7 @@ const Archive = ({ location }) => {
               <ArticlesInYear>
                 {articlesByAscYear[year].map((item, index) => (
                   <ArticlesItem to={item.slug} data-a11y="false" key={index}>
-                    <Date>{item.date}</Date>
+                    <ArticleDate>{item.date}</ArticleDate>
                     <Title>{item.title}</Title>
                   </ArticlesItem>
                 ))}
@@ -129,7 +129,7 @@ const ArticlesItem = styled(Link)`
   `};
 `;
 
-const Date = styled.div`
+const ArticleDate = styled.div`
   font-size: 16px;
   color: ${p => p.theme.colors.secondary};
   margin-bottom: 4px;
