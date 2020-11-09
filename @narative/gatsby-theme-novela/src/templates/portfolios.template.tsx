@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import PortfoliosHero from "../sections/portfolios/Portfolios.Hero";
 import Testimonial from "../sections/portfolios/Testimonial";
+import LatestArticles from "../sections/portfolios/LatestArticles";
 import Section from "@components/Section";
 import SEO from "@components/SEO";
 import Layout from "@components/Layout";
@@ -44,6 +45,7 @@ const PortfoliosPage: Template = ({ location, pageContext }) => {
         description={desc}
       />
       <PortfoliosHero authors={authors} />
+      <LatestArticles />
       <Section narrow>
         <PortfolioList articles={portfolio} />
         <ArticlesPaginator show={pageContext.pageCount > 1}>
