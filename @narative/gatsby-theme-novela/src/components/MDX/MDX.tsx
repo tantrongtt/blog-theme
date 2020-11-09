@@ -123,6 +123,10 @@ const HeadingsCSS = css`
   h6 {
     ${ARTICLE_WIDTH};
   }
+
+  h6 {
+    margin-bottom: -24px;
+  }
 `;
 
 const PrismCSS = p => css`
@@ -258,6 +262,28 @@ const LongQuote = p => css`
       
     `};
   }
+
+  .section {
+    position: relative;
+    padding-top: 56px;
+    padding-bottom: 40px;
+    margin-bottom: 24px;
+
+    &.full {
+      width: ${IMAGE_WIDTHS.full};
+    }
+
+    &.medium {
+      margin: 0 auto;
+      width: 100%;
+      max-width: ${IMAGE_WIDTHS.large};
+    }
+
+    &.bg-dark {
+      background-color: ${p.theme.colors.card};
+    }
+  }
+
 `;
 
 const VideoCSS = css`
