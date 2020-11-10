@@ -45,16 +45,16 @@ const PortfoliosPage: Template = ({ location, pageContext }) => {
         description={desc}
       />
       <PortfoliosHero authors={authors} />
-      {/* <LatestArticles /> */}
+      <LatestArticles />
       <Section narrow>
         <PortfolioList articles={portfolio} />
         <ArticlesPaginator show={pageContext.pageCount > 1}>
           <Paginator {...pageContext} />
         </ArticlesPaginator>
       </Section>
-      <Section>
+      {/* <Section>
         <Testimonial />
-      </Section>
+      </Section> */}
     </Layout>
   );
 };
