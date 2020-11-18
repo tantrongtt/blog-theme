@@ -125,6 +125,7 @@ const HeadingsCSS = css`
   }
 
   h6 {
+    margin-top: 64px;
     margin-bottom: -24px;
   }
 `;
@@ -441,6 +442,11 @@ const Grid = css`
       grid-template-columns: 300px 1fr;
       column-gap: 30px;
       margin-bottom: 64px;
+
+      ${mediaqueries.tablet`
+        grid-template-columns: 1fr;
+      `};
+      
     }
     
     &.Col3 {

@@ -31,16 +31,16 @@ const h1 = styled.h1`
 `;
 
 const h2 = styled.h2`
-  font-size: 36px;
+  font-size: 48px;
   line-height: 1.333;
   ${commonStyles};
 
   ${mediaqueries.desktop`
-    font-size: 28px;
+    font-size: 36px;
   `};
 
   ${mediaqueries.tablet`
-    font-size: 28px;
+    font-size: 36px;
     line-height: 1.45;
   `};
 `;
@@ -80,12 +80,12 @@ const h5 = styled.h5`
 `;
 
 const h6 = styled.h6`
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.45;
   ${commonStyles};
 
   ${mediaqueries.phablet`
-    font-size: 14px;
+    font-size: 16px;
   `};
 `;
 
