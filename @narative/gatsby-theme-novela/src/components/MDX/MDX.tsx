@@ -284,6 +284,11 @@ const LongQuote = p => css`
     }
   }
 
+  .sticky {
+    position: sticky;
+    top: 24px;
+  }
+
 `;
 
 const VideoCSS = css`
@@ -431,6 +436,12 @@ const Grid = css`
         grid-template-columns: 1fr;
       `};
     }
+
+    &.Col2-ShortLeft {
+      grid-template-columns: 300px 1fr;
+      column-gap: 30px;
+      margin-bottom: 64px;
+    }
     
     &.Col3 {
       grid-template-columns: 1fr 1fr 1fr;
@@ -440,6 +451,13 @@ const Grid = css`
       `};
     }
 
+    &.Space-Small {
+      margin-bottom: 48px;
+    }
+
+    &.Space-Medium {
+      margin-bottom: 96px;
+    }
 
     &.Small {
       max-width: ${IMAGE_WIDTHS.regular};
