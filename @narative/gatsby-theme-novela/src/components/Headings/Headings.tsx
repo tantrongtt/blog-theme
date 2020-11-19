@@ -46,16 +46,16 @@ const h2 = styled.h2`
 `;
 
 const h3 = styled.h3`
-  font-size: 24px;
+  font-size: 32px;
   line-height: 1.45;
   ${commonStyles};
 
   ${mediaqueries.tablet`
-    font-size: 22px;
+    font-size: 28px;
   `};
 
   ${mediaqueries.phablet`
-    font-size: 20px;
+    font-size: 24px;
   `};
 `;
 

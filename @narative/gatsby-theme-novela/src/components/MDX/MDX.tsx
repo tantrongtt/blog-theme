@@ -446,6 +446,16 @@ const Grid = css`
       ${mediaqueries.tablet`
         grid-template-columns: 1fr;
       `};
+
+      & > div:first-child {
+        ${mediaqueries.desktop`
+          padding-left: 32px;
+        `};
+
+        ${mediaqueries.tablet`
+          padding-left: 0;
+        `};
+      }
       
     }
     
