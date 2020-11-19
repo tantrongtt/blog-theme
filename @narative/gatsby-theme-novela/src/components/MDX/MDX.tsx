@@ -466,7 +466,7 @@ const Grid = css`
     }
 
     &.Small {
-      max-width: ${IMAGE_WIDTHS.regular};
+      ${ARTICLE_WIDTH};
     }
     
     &.Medium {
