@@ -142,6 +142,7 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
         ),
       ),
       title: node.frontmatter.title,
+      eyebrowHeadline: node.frontmatter.eyebrowHeadline,
       subscription: node.frontmatter.subscription !== false,
     };
 

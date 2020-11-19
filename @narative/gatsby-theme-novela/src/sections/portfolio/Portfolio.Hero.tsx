@@ -30,6 +30,7 @@ const PortfolioHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
       </HeroImage>
       <Section>
         <Header>
+          <EyeBrowHeading>{article.eyebrowHeadline}</EyeBrowHeading>
           <HeroHeading>{article.title}</HeroHeading>
           <HeroSubtitle>{article.excerpt}</HeroSubtitle>
         </Header>
@@ -113,6 +114,11 @@ const HeroHeading = styled(Headings.h1)`
   `}
 `;
 
+const EyeBrowHeading = styled(Headings.h4)`
+  color: ${p => p.theme.colors.textTitle};
+  opacity: .7;
+`;
+
 const HeroSubtitle = styled.div`
   position: relative;
   font-size: 24px;
@@ -145,11 +151,11 @@ const HeroImage = styled.div`
 
   ${mediaqueries.phablet`
     margin-top: 24px;
-    height: 500px;
+    height: 600px;
     border-radius: 10px 10px 0 0;
 
     & > div {
-      height: 500px;
+      height: 600px;
     }
 `}
 `;

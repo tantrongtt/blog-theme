@@ -103,7 +103,7 @@ const NavigationHeader: React.FC<{}> = () => {
           <LinkExternal data-a11y="false" aria-label={`Blog Tiếng Việt`} href={`https://vi.trongnguyen.co`} >
             ★ VN
           </LinkExternal>
-          <DarkModeToggle />
+          {/* <DarkModeToggle /> */}
         </NavControls>
       </NavContainer>
     </Section>
