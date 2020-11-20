@@ -268,7 +268,7 @@ const LongQuote = p => css`
     position: relative;
     padding-top: 56px;
     padding-bottom: 40px;
-    margin-bottom: 24px;
+    margin-bottom: 96px;
 
     &.full {
       width: ${IMAGE_WIDTHS.full};
@@ -281,6 +281,10 @@ const LongQuote = p => css`
     }
 
     &.bg-dark {
+      background-color: ${p.theme.colors.primary};
+    }
+
+    &.bg-light {
       background-color: ${p.theme.colors.card};
     }
   }
