@@ -82,6 +82,11 @@ const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow }) => {
           {hasHeroImage ? <Image src={imageSource} /> : <ImagePlaceholder />}
         </ImageContainer>
         <TextContainer>
+          { article.eyebrowHeadline && 
+            <EyebrowHeading dark hasOverflow={hasOverflow} gridLayout={gridLayout}>
+              {article.eyebrowHeadline}
+            </EyebrowHeading>
+          }
           <Title dark hasOverflow={hasOverflow} gridLayout={gridLayout}>
             {article.title}
           </Title>
@@ -183,7 +188,7 @@ const TextContainer = styled.div`
   position: absolute;
   left: 0;
   top: 0;
-  padding: 48px 40px;
+  padding: 40px;
 
   ${mediaqueries.phablet`
     padding: 40px 32px;
@@ -200,7 +205,7 @@ const Title = styled(Headings.h2)`
   color: ${p => p.theme.colors.textTitle};
   opacity: .8;
   margin-bottom: ${p =>
-    p.hasOverflow && p.gridLayout === 'tiles' ? '35px' : '16px'};
+    p.hasOverflow && p.gridLayout === 'tiles' ? '35px' : '8px'};
   transition: color 0.3s ease-in-out;
   ${limitToTwoLines};
 
@@ -217,6 +222,13 @@ const Title = styled(Headings.h2)`
     margin-bottom: 10px;
     -webkit-line-clamp: 3;
   `}
+`;
+
+const EyebrowHeading = styled(Headings.h5)`
+  font-family: ${p => p.theme.fonts.title};
+  color: ${p => p.theme.colors.textTitle};
+  opacity: .7;
+  margin-bottom: 8px;
 `;
 
 const Excerpt = styled.p<{
@@ -288,7 +300,7 @@ const ArticleLink = styled(Link)`
     height: 4px;
     left: 50%;
     position: absolute;
-    background: ${p => p.theme.colors.secondary};
+    background: ${p => p.theme.colors.accent};
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
     z-index: 1;
