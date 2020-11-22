@@ -309,6 +309,11 @@ const VideoCSS = css`
     max-width: 100%;
     height: auto;
     z-index: 0;
+
+    &.Round {
+      border-radius: 40px;
+      border: 5px solid #2C2C2D;
+    }
   }
 `;
 
