@@ -282,6 +282,17 @@ const LongQuote = p => css`
 
     &.bg-dark {
       background-color: ${p.theme.colors.primary};
+
+      p,
+      figcaption,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: ${p.theme.colors.card};
+      }
     }
 
     &.bg-light {
