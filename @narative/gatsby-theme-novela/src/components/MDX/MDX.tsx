@@ -486,6 +486,11 @@ const Grid = css`
 
     &.Small {
       ${ARTICLE_WIDTH};
+
+      ${mediaqueries.tablet`
+          padding-left: 0;
+          padding-right: 0;
+      `};
     }
     
     &.Medium {
@@ -494,6 +499,13 @@ const Grid = css`
     
     &.Large {
       width: ${IMAGE_WIDTHS.full};
+    }
+
+    & .PaddingMobile {
+      ${mediaqueries.tablet`
+        padding-left: 20px;
+        padding-right: 20px;
+      `};
     }
   }
 `;
