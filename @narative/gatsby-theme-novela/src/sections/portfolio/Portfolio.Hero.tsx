@@ -36,7 +36,7 @@ const PortfolioHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
         </Header>
       </Section>
 
-      <OverlayCover />
+      <OverlayCover dark={article.dark} backgroundColor={article.backgroundColor} />
       
     </Hero>
   );
@@ -47,31 +47,6 @@ export default PortfolioHero;
 const Hero = styled.div`
     margin-top: -96px;
     position: relative;
-  ${p => mediaqueries.phablet`
-    &::before {
-      content: "";
-      width: 100%;
-      height: 20px;
-      background: ${p.theme.colors.primary};
-      position: absolute;
-      left: 0;
-      top: -10px;;
-      transition: ${p.theme.colorModeTransition};
-    }
-
-    &::after {
-      content: "";
-      width: 100%;
-      height: 10px;
-      background: ${p.theme.colors.background};
-      position: absolute;
-      left: 0;
-      top: 10px;
-      border-top-left-radius: 25px;
-      border-top-right-radius: 25px;
-      transition: ${p.theme.colorModeTransition};
-    }
-  `}
 `;
 
 const Header = styled.header<{
@@ -99,7 +74,8 @@ const Header = styled.header<{
     `}
     
   ${mediaqueries.phablet`
-    padding-right: 4rem;
+    position: relative;
+    margin-top: 28px;
   `}
 `;
 
@@ -154,24 +130,26 @@ const HeroImage = styled.div`
   `}
 
   ${mediaqueries.phablet`
-    margin-top: 24px;
-    height: 600px;
-    border-radius: 10px 10px 0 0;
+    height: 300px;
 
     & > div {
-      height: 600px;
+      height: 300px;
     }
 `}
 `;
 
-const OverlayCover = styled.div`
+const OverlayCover = styled.div<{
+    dark: boolean;
+    backgroundColor: string;
+  }>`
     position: absolute;
-    bottom: 0;
+    top: 300px;
     width: 100%;
     height: 60%;
-    background: ${p => p.theme.colors.gradientImage};
     transition: ${p => p.theme.colorModeTransition};
     z-index: 1;
+    color: ${p => (!p.dark ? p.theme.colors.textTitle : p.theme.colors.card)};
+    background-color: ${p => p.backgroundColor ? p.backgroundColor : 'none'};
 
     display: none; // hide on desktop
 

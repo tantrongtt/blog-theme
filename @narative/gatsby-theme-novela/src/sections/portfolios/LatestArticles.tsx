@@ -70,11 +70,11 @@ const LatestArticle = styled(Link)`
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
   ${mediaqueries.tablet`
-    font-size: 32px;
+    font-size: 40px;
   `};
 
   ${mediaqueries.phablet`
-    font-size: 30px;
+    font-size: 36px;
     line-height: 40px;
   `};
 
