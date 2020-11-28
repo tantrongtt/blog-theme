@@ -69,7 +69,7 @@ const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow }) => {
 
   const { gridLayout } = useContext(GridLayoutContext);
   const hasOverflow = narrow && article.title.length > 35;
-  const imageSource = article.thumbnail.regular;
+  const imageSource = article.hero.full;
   const hasHeroImage =
     imageSource &&
     Object.keys(imageSource).length !== 0 &&
@@ -78,8 +78,8 @@ const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow }) => {
   return (
     <ArticleLink to={article.slug} data-a11y="false">
       <Item>
-        <ImageContainer narrow={narrow} gridLayout={gridLayout}>
-          {hasHeroImage ? <Image src={imageSource} /> : <ImagePlaceholder />}
+        <ImageContainer>
+          {hasHeroImage ? <Image src={imageSource} alt={article.title} imgStyle={{ objectFit: 'cover', objectPosition: 'right bottom' }} /> : <ImagePlaceholder />}
         </ImageContainer>
         <TextContainer>
           { article.eyebrowHeadline && 
@@ -138,7 +138,7 @@ const ArticlesListContainer = styled.div<{ alwaysShowAllDetails?: boolean }>`
 const List = styled.div`
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 2;
   column-gap: 30px;
 
@@ -159,9 +159,9 @@ const Item = styled.div`
   position: relative;
 `;
 
-const ImageContainer = styled.div<{ narrow: boolean; gridLayout: string }>`
+const ImageContainer = styled.div`
   position: relative;
-  height: ${p => (p.gridLayout === 'tiles' ? '680px' : '220px')};
+  height: 480px;
   transition: transform 0.3s var(--ease-out-quad),
     box-shadow 0.3s var(--ease-out-quad);
 
@@ -170,7 +170,7 @@ const ImageContainer = styled.div<{ narrow: boolean; gridLayout: string }>`
   }
 
   ${mediaqueries.desktop`
-    height: 500px;
+    height: 400px;
   `}
 
   ${mediaqueries.tablet`
@@ -188,10 +188,23 @@ const TextContainer = styled.div`
   position: absolute;
   left: 0;
   top: 0;
-  padding: 40px;
+  padding: 64px 40px;
+  max-width: 480px;
+
+  ${mediaqueries.desktop`
+    max-width: 320px;
+  `}
+
+  ${mediaqueries.tablet`
+    padding: 24px 24px;
+  `}
 
   ${mediaqueries.phablet`
-    padding: 40px 32px;
+    padding: 48px 24px 8px 24px;
+    max-width: 100%;
+    bottom: 0;
+    top: auto;
+    background: linear-gradient(180deg, rgba(209, 232, 235, 0) 0%, rgba(209, 232, 235, 0.5) 36.91%, #D1E8EB 100%);
   `}
 `;
 
@@ -229,6 +242,10 @@ const EyebrowHeading = styled(Headings.h5)`
   color: ${p => p.theme.colors.textTitle};
   opacity: .7;
   margin-bottom: 8px;
+
+  ${mediaqueries.phablet`
+    margin-bottom: 0;
+  `}
 `;
 
 const Excerpt = styled.p<{
@@ -243,23 +260,17 @@ const Excerpt = styled.p<{
   opacity: .7;
   font-family: ${p => p.theme.fonts.body};
   display: ${p => (p.hasOverflow && p.gridLayout === 'tiles' ? 'none' : 'box')};
-  max-width: ${p => (p.narrow ? '415px' : '515px')};
   line-height: 22px;
 
   ${mediaqueries.desktop`
     display: -webkit-box;
   `}
 
-  ${mediaqueries.phablet`
+  ${mediaqueries.tablet`
     margin-bottom; 15px;
+    display: none;
   `}
 
-  ${mediaqueries.phablet`
-    max-width: 100%;
-    margin-bottom: 20px;
-    font-size: 16px;
-    -webkit-line-clamp: 3;
-  `}
 `;
 
 const SeeMore = styled.div`
@@ -268,6 +279,11 @@ const SeeMore = styled.div`
   font-family: ${p => p.theme.fonts.title};
   margin-top: 8px;
   opacity: .8;
+
+  ${mediaqueries.tablet`
+    display: none;
+  `}
+
 `;
 
 const MetaData = styled.div`

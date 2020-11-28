@@ -80,12 +80,12 @@ module.exports.local = {
           body
           hero {
             full: childImageSharp {
-              fluid(maxWidth: 1400, quality: 100) {
+              fluid(maxWidth: 1920, quality: 100) {
                 ${GatsbyFluid_withWebp}
               }
             }
             regular: childImageSharp {
-              fluid(maxWidth: 653, quality: 100) {
+              fluid(maxWidth: 1140, quality: 100) {
                 ${GatsbyFluid_withWebp}
               }
             }

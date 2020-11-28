@@ -60,8 +60,9 @@ const LatestArticle = styled(Link)`
   display: inline;
   position: relative;
   font-family: ${p => p.theme.fonts.title};
+  font-weight: ${p => p.theme.fontsWeight.bold};
   font-size: 48px;
-	color: ${p => p.theme.colors.secondary};
+	color: ${p => p.theme.colors.primary};
   margin-bottom: 8px;
   transition: color 0.33s var(--ease-out-quart);
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
