@@ -23,13 +23,13 @@ const PortfolioHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
     <Hero>
       <HeroImage id="PortfolioImage__Hero">
       {hasHeroImage ? (
-          <Image src={article.hero.full} />
+          <Image src={article.hero.full} alt={article.title} imgStyle={{ objectFit: 'cover', objectPosition: 'right bottom' }} />
       ) : (
           <ImagePlaceholder />
       )}
       </HeroImage>
       <Section>
-        <Header>
+        <Header dark={article.dark} backgroundColor={article.backgroundColor}>
           <EyeBrowHeading>{article.eyebrowHeadline}</EyeBrowHeading>
           <HeroHeading>{article.title}</HeroHeading>
           <HeroSubtitle>{article.excerpt}</HeroSubtitle>
@@ -74,12 +74,16 @@ const Hero = styled.div`
   `}
 `;
 
-const Header = styled.header`
+const Header = styled.header<{
+  dark: boolean;
+  backgroundColor: string;
+}>`
   position: absolute;
   top: 150px;
   z-index: 10;
   margin: 100px auto 56px;
   max-width: 510px;
+  color: ${p => (!p.dark ? p.theme.colors.textTitle : p.theme.colors.card)};
 
   ${mediaqueries.desktop`
     max-width: 385px;
@@ -102,7 +106,7 @@ const Header = styled.header`
 const HeroHeading = styled(Headings.h1)`
   // font-size: 48px;
   font-family: ${p => p.theme.fonts.title};
-  color: ${p => p.theme.colors.textTitle};
+  color: inherit;
   margin-bottom: 25px;
   font-weight: ${p => p.theme.fontsWeight.bold};
   line-height: 1.32;
@@ -115,14 +119,14 @@ const HeroHeading = styled(Headings.h1)`
 `;
 
 const EyeBrowHeading = styled(Headings.h4)`
-  color: ${p => p.theme.colors.textTitle};
+  color: inherit;
   opacity: .7;
 `;
 
 const HeroSubtitle = styled.div`
   position: relative;
   font-size: 24px;
-  color: ${p => p.theme.colors.textTitle};
+  color: inherit;
   align-items: center;
   opacity: .7;
 `;

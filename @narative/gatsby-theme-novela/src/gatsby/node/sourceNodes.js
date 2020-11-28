@@ -18,6 +18,7 @@ module.exports = ({ actions }) => {
       slug: String!
       title: String!
       eyebrowHeadline: String
+      backgroundColor: String
       date: Date! @dateformat
       author: String!
       excerpt(pruneLength: Int = 140): String!

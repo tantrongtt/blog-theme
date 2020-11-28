@@ -81,7 +81,7 @@ const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow }) => {
         <ImageContainer>
           {hasHeroImage ? <Image src={imageSource} alt={article.title} imgStyle={{ objectFit: 'cover', objectPosition: 'right bottom' }} /> : <ImagePlaceholder />}
         </ImageContainer>
-        <TextContainer>
+        <TextContainer dark={article.dark} backgroundColor={article.backgroundColor}>
           { article.eyebrowHeadline && 
             <EyebrowHeading dark hasOverflow={hasOverflow} gridLayout={gridLayout}>
               {article.eyebrowHeadline}
@@ -174,22 +174,25 @@ const ImageContainer = styled.div`
   `}
 
   ${mediaqueries.tablet`
-    height: 480px;
+    height: 280px;
   `}
 
   ${mediaqueries.phablet`
-    overflow: hidden;
     margin-bottom: 0;
     box-shadow: none;
   `}
 `;
 
-const TextContainer = styled.div`
+const TextContainer = styled.div<{
+  dark: boolean;
+  backgroundColor: string;
+}>`
   position: absolute;
   left: 0;
   top: 0;
   padding: 64px 40px;
   max-width: 480px;
+  color: ${p => (!p.dark ? p.theme.colors.textTitle : p.theme.colors.card)};
 
   ${mediaqueries.desktop`
     max-width: 320px;
@@ -199,12 +202,11 @@ const TextContainer = styled.div`
     padding: 24px 24px;
   `}
 
-  ${mediaqueries.phablet`
-    padding: 48px 24px 8px 24px;
+  ${p => mediaqueries.phablet`
+    position: relative;
+    padding: 16px 24px 8px 24px;
     max-width: 100%;
-    bottom: 0;
-    top: auto;
-    background: linear-gradient(180deg, rgba(209, 232, 235, 0) 0%, rgba(209, 232, 235, 0.5) 36.91%, #D1E8EB 100%);
+    background-color: ${p.backgroundColor ? p.backgroundColor : p.theme.colors.card};
   `}
 `;
 
@@ -215,7 +217,7 @@ const ContentContainer = styled.div`
 const Title = styled(Headings.h2)`
   font-size: 28px;
   font-family: ${p => p.theme.fonts.title};
-  color: ${p => p.theme.colors.textTitle};
+  color: inherit;
   opacity: .8;
   margin-bottom: ${p =>
     p.hasOverflow && p.gridLayout === 'tiles' ? '35px' : '8px'};
@@ -239,7 +241,7 @@ const Title = styled(Headings.h2)`
 
 const EyebrowHeading = styled(Headings.h5)`
   font-family: ${p => p.theme.fonts.title};
-  color: ${p => p.theme.colors.textTitle};
+  color: inherit;
   opacity: .7;
   margin-bottom: 8px;
 
@@ -256,7 +258,7 @@ const Excerpt = styled.p<{
   ${limitToTwoLines};
   font-size: 16px;
   margin-bottom: 10px;
-  color: ${p => p.theme.colors.textTitle};
+  color: inherit;
   opacity: .7;
   font-family: ${p => p.theme.fonts.body};
   display: ${p => (p.hasOverflow && p.gridLayout === 'tiles' ? 'none' : 'box')};
@@ -275,7 +277,7 @@ const Excerpt = styled.p<{
 
 const SeeMore = styled.div`
   font-size: 14px;
-  color: ${p => p.theme.colors.textTitle};
+  color: inherit;
   font-family: ${p => p.theme.fonts.title};
   margin-top: 8px;
   opacity: .8;
@@ -347,6 +349,8 @@ const ArticleLink = styled(Link)`
   }
 
   ${mediaqueries.phablet`
+    margin-bottom: 30px;
+
     &:hover ${ImageContainer} {
       transform: none;
       box-shadow: initial;

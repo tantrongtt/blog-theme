@@ -134,6 +134,7 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
       hero: node.frontmatter.hero,
       thumbnail: node.frontmatter.thumbnail,
       secret: node.frontmatter.secret || false,
+      dark: node.frontmatter.dark || false,
       slug: generateSlug(
         basePath,
         generateArticlePermalink(
@@ -143,6 +144,7 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
       ),
       title: node.frontmatter.title,
       eyebrowHeadline: node.frontmatter.eyebrowHeadline,
+      backgroundColor: node.frontmatter.backgroundColor,
       subscription: node.frontmatter.subscription !== false,
     };
 

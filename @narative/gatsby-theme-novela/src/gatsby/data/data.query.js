@@ -69,8 +69,10 @@ module.exports.local = {
           id
           slug
           secret
+          dark
           title
           eyebrowHeadline
+          backgroundColor
           author
           date(formatString: "MMMM Do, YYYY")
           dateForSEO: date
@@ -97,13 +99,6 @@ module.exports.local = {
             seo: childImageSharp {
               fixed(width: 1200, quality: 100) {
                 src
-              }
-            }
-          }
-          thumbnail {
-            regular: childImageSharp {
-              fluid(maxWidth: 600, quality: 100) {
-                ${GatsbyFluid_withWebp}
               }
             }
           }

@@ -41,7 +41,9 @@ const LatestArticles: React.FC<{}> = () => {
           </LatestArticle>
         ))}
         <LatestArticle to={`/writing`} data-a11y="false">
-          <ViewAll>All posts 🤘 </ViewAll>
+          <ViewAll>All posts
+            <ArticleDate>View all →</ArticleDate>
+          </ViewAll>
         </LatestArticle>
       </WriteContainer>
     </Section>
