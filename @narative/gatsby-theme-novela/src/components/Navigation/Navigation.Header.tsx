@@ -89,6 +89,9 @@ const NavigationHeader: React.FC<{}> = () => {
           )}
           <Logo fill={fill} />
           <Hidden>Navigate back to the homepage</Hidden>
+          <ArcTextWrap>
+            <Icons.ArcTagline /> 
+          </ArcTextWrap>
         </LogoLink>
         <NavControls>
           <NavLink to={`/writing`} title={`All articles`} activeClassName="active" >
@@ -134,17 +137,8 @@ const BackArrowIconContainer = styled.div`
 const NavContainer = styled.div`
   position: relative;
   z-index: 100;
-  padding-top: 64px;
   display: flex;
   justify-content: space-between;
-
-  ${mediaqueries.desktop_medium`
-    padding-top: 50px;
-  `};
-
-  @media screen and (max-height: 800px) {
-    padding-top: 50px;
-  }
 `;
 
 const NavLink = styled(Link)`
@@ -157,7 +151,7 @@ const NavLink = styled(Link)`
   position: relative;
   margin-left: 40px;
 
-  ${mediaqueries.phone`
+  ${mediaqueries.tablet`
     margin-left: 24px;
   `}
 
@@ -216,10 +210,21 @@ const LogoLink = styled(Link)<{ back: string }>`
   position: relative;
   display: flex;
   align-items: center;
-  left: ${p => (p.back === "true" ? "-54px" : 0)};
+  left: 0;
+  width: 114px;
+  height: 144px;
+  background-color: ${p => p.theme.colors.accent};
+  box-shadow: 0px 7px 16px -12px rgba(104, 25, 8, 0.6);
+  margin-top: -16px;
+  transition: transform 0.25s ease;
 
   ${mediaqueries.desktop_medium`
     left: 0
+  `}
+
+  ${mediaqueries.tablet`
+    width: 88px;
+    height: 120px;
   `}
 
   &[data-a11y="true"]:focus::after {
@@ -238,6 +243,7 @@ const LogoLink = styled(Link)<{ back: string }>`
     ${BackArrowIconContainer} {
       transform: translateX(-3px);
     }
+    transform: translateY(12px);
   }
 `;
 
@@ -370,4 +376,20 @@ const Hidden = styled.span`
   height: 0px;
   visibility: hidden;
   overflow: hidden;
+`;
+
+const ArcTextWrap = styled.div`
+  position: absolute;
+  display: inline-block;
+  width: 88px;
+  height: 88px;
+  bottom: 12px;
+  left: 12px;
+  animation: rotation 20s infinite linear;
+  
+  ${mediaqueries.tablet`
+    width: 64px;
+    height: 64px;
+  `}
+
 `;

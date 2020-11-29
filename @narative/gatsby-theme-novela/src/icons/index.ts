@@ -28,6 +28,7 @@ import Tiles from './ui/Tiles.Icon';
 
 // SVG
 import NotFound from './svg/NotFound';
+import ArcTagline from './svg/ArcTagline';
 
 
 export default {
@@ -57,4 +58,5 @@ export default {
   Tiles,
 
   NotFound,
+  ArcTagline
 };
