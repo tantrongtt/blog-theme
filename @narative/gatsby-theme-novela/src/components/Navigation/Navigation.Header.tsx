@@ -5,7 +5,7 @@ import { useColorMode } from "theme-ui";
 
 import Section from "@components/Section";
 import Logo from "@components/Logo";
-import LinkExternal from "@components/LinkExternal";
+import { LinkExternal } from "@components/LinkNav";
 
 import Icons from "@icons";
 import mediaqueries from "@styles/media";
@@ -100,9 +100,11 @@ const NavigationHeader: React.FC<{}> = () => {
           <NavLink to={`/about`} title={`About me`} activeClassName="active" >
             Me
           </NavLink>
-          <LinkExternal data-a11y="false" aria-label={`Blog Tiếng Việt`} href={`https://vi.trongnguyen.co`} >
-            ★ VN
-          </LinkExternal>
+          <LinkTextWrap>
+            <LinkExternal data-a11y="false" aria-label={`Blog Tiếng Việt`} href={`https://vi.trongnguyen.co`} >
+              ★ VN
+            </LinkExternal>
+          </LinkTextWrap>
           {/* <DarkModeToggle /> */}
         </NavControls>
       </NavContainer>
@@ -195,6 +197,19 @@ const NavLink = styled(Link)`
       width: 20px;
     }
   }
+`;
+
+const LinkTextWrap = styled.div`
+  font-weight: ${p => p.theme.fontsWeight.bold};
+  font-family: ${p => p.theme.fonts.title};
+  color: ${p => p.theme.colors.secondary};
+  font-size: 14px;
+  margin-left: 40px;
+
+  ${mediaqueries.phone`
+    margin-left: 24px;
+  `}
+  
 `;
 
 const LogoLink = styled(Link)<{ back: string }>`

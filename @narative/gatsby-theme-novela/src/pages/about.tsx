@@ -137,7 +137,7 @@ const InfoHeading = styled.h1`
 `;
 
 const InfoText = styled.p`
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 24px;
   line-height: 1.7;
   color: ${p => p.theme.colors.primary};
