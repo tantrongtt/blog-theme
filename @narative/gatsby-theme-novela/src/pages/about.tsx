@@ -12,7 +12,7 @@ import { Template } from "@types";
 
 const siteQuery = graphql`
 {
-  file(relativePath: {eq: "trong-avatar.jpg"}) {
+  file(relativePath: {eq: "Trong-White.jpg"}) {
     id
     childImageSharp {
       fluid {
