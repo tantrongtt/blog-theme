@@ -31,6 +31,7 @@ module.exports.local = {
           timeToRead
           excerpt
           subscription
+          featured
           body
           hero {
             full: childImageSharp {

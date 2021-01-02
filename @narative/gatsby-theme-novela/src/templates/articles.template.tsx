@@ -9,6 +9,7 @@ import NavCategory from '@components/Navigation/Navigation.Categories';
 
 import ArticlesHero from "../sections/articles/Articles.Hero";
 import ArticlesList from "../sections/articles/Articles.List";
+import FeaturedPosts from "../sections/articles/Articles.Featured";
 
 import { Template } from "@types";
 
@@ -21,6 +22,9 @@ const ArticlesPage: Template = ({ location, pageContext }) => {
     <Layout>
       <SEO pathname={location.pathname} />
       <ArticlesHero authors={authors} />
+      <Section narrow>
+        <FeaturedPosts />
+      </Section>
       <Section narrow>
         <NavCategory category={category} />
         <ArticlesList articles={articles} />
