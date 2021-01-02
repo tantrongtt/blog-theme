@@ -91,9 +91,14 @@ const FeaturedCard = styled(Link)`
   display: flex;
   flex-direction: column;
 
+  ${mediaqueries.phablet`
+    min-width: 190px;
+  `}
+
   &:not(:first-child) {
     margin-left: -80px;
     box-shadow: -16px 24px 32px rgba(152, 176, 180, 0.3), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.6);
+
   }
 
   &:hover {
