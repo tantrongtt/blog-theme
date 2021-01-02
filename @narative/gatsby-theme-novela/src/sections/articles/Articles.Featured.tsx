@@ -37,7 +37,7 @@ const FeaturedArticles: React.FC<{}> = () => {
           <FeaturedCard to={article.node.slug} data-a11y="false" key={index}>
             <DatePost>{article.node.date}</DatePost>
             <Title>{article.node.title}</Title>
-            <Categoriest>{article.node.categories}</Categoriest>
+            <Categoriest>{article.node.categories.join(' – ')}</Categoriest>
           </FeaturedCard>
 
         ))
