@@ -31,7 +31,7 @@ const FeaturedArticles: React.FC<{}> = () => {
 
   return (
     <SectionWrapper>
-      <SectionTitle>Featured Posts</SectionTitle>
+      <SectionTitle>Featured posts</SectionTitle>
       <List>
         {featuredArticles.map((article, index) =>(
           <FeaturedCard to={article.node.slug} data-a11y="false" key={index}>
