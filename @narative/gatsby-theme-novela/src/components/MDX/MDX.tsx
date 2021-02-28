@@ -22,6 +22,8 @@ import { ImageZoom } from "@components/Image";
 import mediaqueries from "@styles/media";
 import { toKebabCase } from "@utils";
 
+const videoPlaceholder = '/video-placeholder.svg';
+
 const components = {
   img: ImageZoom,
   a: Anchor,
@@ -314,12 +316,17 @@ const VideoCSS = css`
     margin-right: auto;
     margin-bottom: 32px;
   }
+  
   video {
     display: inline-block;
     position: relative;
     max-width: 100%;
     height: auto;
     z-index: 0;
+    background-image: url("${videoPlaceholder}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
     &.Round {
       border-radius: 40px;
@@ -518,7 +525,12 @@ const Grid = css`
         padding-right: 20px;
       `};
     }
+
+    &.Grid-Gap-Medium {
+      grid-gap: 64px;
+    }
   }
+
 `;
 
 /**
