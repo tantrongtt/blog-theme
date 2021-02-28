@@ -41,11 +41,14 @@ Rebuilding the location while browsing and searching for items is one of the mos
 
 ###### The Challenge
 ## A better location treatment works across all countries and categories
-High-level goals were to:
-- Make it easy to understand and easy to use for everyone, in different countries
-- A solution that works for different categories: General goods vs Property
-- Increase content relevance on discovering and search journey
 
+We have three high-level problems that we need to solve:
+
+1. How to make the location picker easier to use for everyone in different countries?
+
+2. How to make it works for different categories (General goods vs Property vs Home Service) when the searching behaviour is very different?
+
+3. How to increase the relevancy on browse and search journey?
 
 ## My role
 I led the design of the new location picker across iOS, Android, mobile, and desktop Web since the outset of the project in May 2020.
@@ -300,19 +303,6 @@ Quickly filter listings by personal locations
   </div>
 </div>
 
-<div class="Grid Col2-ShortLeft Small">
-  <div>
-    <h4>New location selection in the item creation form</h4>
-    <p>
-      Besides the browsing flow, we also changed the location selection in the item creation form to improve user experience and make it work with the brand new data structure.  
-    </p>
-    </div>
-  <div class="PaddingMobile">
-    <video class="Round" autoplay loop muted playsinline src="./images/video-new-8.mp4"></video>
-  </div>
-
-</div>
-
 <div class="section full bg-dark">
 
 #### And it works across all platforms
@@ -331,6 +321,75 @@ iOS, Android, Mobile Web and Desktop Web
   </div>
 </div>
 
+###### The launching
+## The first release: low usage but good Conversion Rate (CR)
+After 5 months of design and implementation, we released it first in PH in Dec 2020. One month went by, we got the data and some qualitative feedback from users:
+
+* The usage is lower than we expected: lesser people use the location picker, comparing to the old one.
+* But on the other hand, the CR funnel improved a lot. The funnel when people browse → Chat increases by +18%.
+
+At least, we know that the new solution brings a better experience, people can find things they want easier. Then the main questions are **why the usage is very low** and **how to increase the usage.**
+
+Then I collaborated with a PM, DA to analyze the data. The reason we found out is the sticky behavior of the entry point.
+
+Why did we know? Because before we launched the new design, we had made a change in the behavior of the entry point of the old location picker. The usage declined from the time we made that change.
+
+<div class="Image__Small">
+  <img src="./images/launch-order-chart.png" />
+</div>
+
+Besides data, we also receive some user feedback sent to our User Voice team.
+
+*“The items do not appear compared to the old search mechanics" – Kim*
+
+*“Location search was accurate in the previous version. Updates showing (listings) very far locations from my city which is not accurate” – Mico*
+
+So not only the design, but we need to change also the logic of the result page.
+
+
+### Next iterations
+When we want to increase the usage of a feature, we are tempted to use onboarding or tooltip to tell people about that new feature. That's always our first thinking.
+
+But explaining to people how to do something is a sign of bad design. So what we did?
+
+**Sticky entry point**
+
+<div class="Grid Col2 Small Grid-Gap-Medium">
+  <div>
+    <video class="Round" autoplay loop muted playsinline src="./images/launch-sticky-old.mp4"></video>
+    <figcaption>[1st release] The entry point is flown when scrolling down</figcaption>
+  </div>
+  <div>
+    <video class="Round" autoplay loop muted playsinline src="./images/launch-sticky-new.mp4"></video>
+    <figcaption>[New release] Make the entry sticky on top and adding a chevron to make it more visible and tappable.</figcaption>
+  </div>
+</div>
+
+**A/B test the logic filtering listings**
+
+<div class="Grid Col2 Small Grid-Gap-Medium">
+  <div>
+    <img src="./images/launch-result-old.png" />
+    <figcaption>[1st release] Results include both mail delivery (no meetup) and meetup listings</figcaption>
+  </div>
+  <div>
+    <img src="./images/launch-result-new.png" />
+    <figcaption>[New release] Showing only listings with matched meetup locations</figcaption>
+  </div>
+</div>
+
+**Changing the order of administrative**
+<div class="Grid Col2 Small Grid-Gap-Medium">
+  <div>
+    <img src="./images/launch-order-old.png" />
+    <figcaption>[1st release] Sort from top to bottom</figcaption>
+  </div>
+  <div>
+    <img src="./images/launch-order-new.png" />
+    <figcaption>[New release] MCity moves to the top due to the usage</figcaption>
+  </div>
+</div>
+
 ###### The impacts
 ## Positive results and much more to do
 
@@ -345,6 +404,8 @@ Through some iterations that learning from data and user feedback, we got great 
 We launched it first for the Philippines, Singapore, Hong Kong. Then Taiwan, Malaysia, and Indonesia later.
 
 *For confidentiality reasons I have omitted the actual values for these metrics.*
+
+---
 
 ## Credit
 My role: Design Owner
