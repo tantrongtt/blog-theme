@@ -459,6 +459,7 @@ const Grid = css`
     
     &.Col2 {
       grid-template-columns: 1fr 1fr;
+      margin-bottom: 64px;
       
       ${mediaqueries.tablet`
         grid-template-columns: 1fr;
