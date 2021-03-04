@@ -529,6 +529,7 @@ const Grid = css`
 
     &.Grid-Gap-Medium {
       grid-gap: 64px;
+      margin-bottom: 64px;
     }
   }
 
