@@ -400,14 +400,6 @@ const ImageCSS = css`
     width: 100%;
     max-width: ${IMAGE_WIDTHS.large};
 
-    ${mediaqueries.desktop_medium`
-      left: -34px;
-    `};
-
-    ${mediaqueries.desktop`
-      left: -26px;
-    `};
-
     ${mediaqueries.tablet`
       border-radius: 0;
       left: 0;
@@ -432,10 +424,6 @@ const ImageCSS = css`
     img {
       border-radius: 0;
     }
- 
-    ${mediaqueries.desktop`
-      left: -53px;
-    `};
 
     ${mediaqueries.tablet`
       left: 0;
