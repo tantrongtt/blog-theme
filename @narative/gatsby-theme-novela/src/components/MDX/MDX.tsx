@@ -70,7 +70,7 @@ export default MDX;
 
 const IMAGE_WIDTHS = {
   regular: "680px",
-  large: "1004px",
+  large: "900px",
   full: "100%"
 };
 
