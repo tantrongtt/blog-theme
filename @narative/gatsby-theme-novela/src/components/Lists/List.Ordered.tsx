@@ -55,7 +55,7 @@ const OrderedList = styled.ol`
     width: 3rem;
     display: inline-block;
     position: absolute;
-    color: ${p => p.theme.colors.articleText};
+    color: inherit;
   }
 
   li::before {

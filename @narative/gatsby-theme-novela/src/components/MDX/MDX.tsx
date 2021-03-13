@@ -292,8 +292,14 @@ const LongQuote = p => css`
       h3,
       h4,
       h5,
-      h6 {
+      h6,    
+      ul, 
+      ol  {
         color: ${p.theme.colors.card};
+      }
+
+      figcaption {
+        opacity: .6;
       }
     }
 
@@ -314,7 +320,8 @@ const VideoCSS = css`
     ${ARTICLE_WIDTH};
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 32px;
+    margin-bottom: 48px;
+    margin-top: 32px;
   }
   
   video {
@@ -359,7 +366,7 @@ const ImageCSS = css`
   }
 
   div.Image__Small {
-    display: inline-block;
+    // display: inline-block;
     position: relative;
     max-width: 100%;
     height: auto;
