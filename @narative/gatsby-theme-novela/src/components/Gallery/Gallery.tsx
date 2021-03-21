@@ -27,7 +27,7 @@ const Gallery = ({data}) => {
               <Image
                 src={item.node.image.childImageSharp.fluid}
                 alt={item.node.title}
-                imgStyle={{ objectFit: 'cover', objectPosition: 'center' }}
+                imgStyle={{ objectFit: 'contain', objectPosition: 'center' }}
               />
             </ImageItem>
           ))
@@ -54,13 +54,13 @@ export default Gallery;
 const ImageGrid = styled.div`
   display: grid;
   grid-gap: 30px;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
   grid-auto-rows: minmax(50px, auto);
   z-index: 1;
   position: relative;
 
   ${mediaqueries.tablet`
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   `};
     
   ${mediaqueries.phablet`
