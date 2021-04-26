@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { graphql, useStaticQuery } from "gatsby";
 
 import Headings from '@components/Headings';
 import Image, { ImagePlaceholder } from '@components/Image';
@@ -8,6 +9,19 @@ import mediaqueries from '@styles/media';
 import { IArticle, IAuthor } from '@types';
 
 import ArticleAuthors from './Article.Authors';
+
+const siteQuery = graphql`
+{
+  file(relativePath: {eq: "audio-thumbnai.webp"}) {
+    id
+    childImageSharp {
+      fluid {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+}
+`;
 
 interface ArticleHeroProps {
   article: IArticle;
@@ -20,6 +34,7 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
     article.hero &&
     Object.keys(article.hero.full).length !== 0 &&
     article.hero.full.constructor === Object;
+  const avatarResult = useStaticQuery(siteQuery);
 
   return (
     <Hero>
@@ -33,7 +48,22 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
             {/* {article.date} · {article.timeToRead} min read */}
           </ArticleMeta>
         </HeroSubtitle>
+
+        { article.audio && 
+          <AudioWrapper>
+            <AudioThumbnail>
+              <Image src={avatarResult.file.childImageSharp.fluid} />
+            </AudioThumbnail>
+            <AudioBar>
+              <AudioTitle>Listen</AudioTitle>
+              <audio controls src={article.audio.publicURL}></audio>
+            </AudioBar>
+          </AudioWrapper>
+        }
+        
       </Header>
+
+
       <HeroImage id="ArticleImage__Hero">
         {hasHeroImage ? (
           <Image src={article.hero.full} />
@@ -173,6 +203,28 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
       margin-bottom: 5px;
     }
   `}
+`;
+
+const AudioWrapper = styled.div`
+  display: grid;
+  grid-gap: 16px;
+  position: relative;
+  grid-template-columns: 160px 1fr;
+  margin-top: 40px;
+  align-items: center;
+`;
+
+const AudioThumbnail = styled.div`
+
+`;
+
+const AudioBar  = styled.div`
+  audio {
+    width: 100%;
+  }
+`;
+
+const AudioTitle = styled.p`
 `;
 
 const HeroImage = styled.div`

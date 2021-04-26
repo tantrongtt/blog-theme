@@ -11,6 +11,7 @@ module.exports = ({ actions }) => {
       hero: File @fileByRelativePath
       thumbnail: File @fileByRelativePath
       timeToRead: Int
+      audio: File @fileByRelativePath
     }
 
     type Portfolio implements Node {

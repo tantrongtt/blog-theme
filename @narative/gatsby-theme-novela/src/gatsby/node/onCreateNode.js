@@ -105,6 +105,7 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
       featured: node.frontmatter.featured || false,
       subscription: node.frontmatter.subscription !== false,
       categories: node.frontmatter.categories || [],
+      audio: node.frontmatter.audio,
     };
 
     createNode({
