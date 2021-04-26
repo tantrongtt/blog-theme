@@ -55,7 +55,7 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
               <Image src={avatarResult.file.childImageSharp.fluid} />
             </AudioThumbnail>
             <AudioBar>
-              <AudioTitle>Listen</AudioTitle>
+              <AudioTitle>Try to listen to my bad voice</AudioTitle>
               <audio controls src={article.audio.publicURL}></audio>
             </AudioBar>
           </AudioWrapper>
@@ -225,6 +225,8 @@ const AudioBar  = styled.div`
 `;
 
 const AudioTitle = styled.p`
+  margin-bottom: 8px;
+  color: ${p => p.theme.colors.secondary};
 `;
 
 const HeroImage = styled.div`
