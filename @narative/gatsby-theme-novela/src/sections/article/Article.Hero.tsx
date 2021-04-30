@@ -12,7 +12,7 @@ import ArticleAuthors from './Article.Authors';
 
 const siteQuery = graphql`
 {
-  file(relativePath: {eq: "audio-thumbnai.webp"}) {
+  file(relativePath: {eq: "audio-recodrding-project.png"}) {
     id
     childImageSharp {
       fluid {
@@ -55,7 +55,7 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
               <Image src={avatarResult.file.childImageSharp.fluid} />
             </AudioThumbnail>
             <AudioBar>
-              <AudioTitle>Try to listen to my bad voice</AudioTitle>
+              <AudioTitle>Voice, louder project</AudioTitle>
               <audio controls src={article.audio.publicURL}></audio>
             </AudioBar>
           </AudioWrapper>
@@ -207,11 +207,18 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
 
 const AudioWrapper = styled.div`
   display: grid;
-  grid-gap: 16px;
+  grid-gap: 24px;
   position: relative;
   grid-template-columns: 160px 1fr;
   margin-top: 40px;
   align-items: center;
+  box-shadow: ${p => p.theme.colors.neumorphismShadown};
+  padding-right: 24px;
+
+  ${mediaqueries.tablet`
+    grid-template-columns: 120px 1fr;
+  `}
+
 `;
 
 const AudioThumbnail = styled.div`

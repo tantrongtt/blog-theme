@@ -139,6 +139,8 @@ const NavContainer = styled.div`
   z-index: 100;
   display: flex;
   justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 24px;
 `;
 
 const NavLink = styled(Link)`
@@ -211,11 +213,11 @@ const LogoLink = styled(Link)<{ back: string }>`
   display: flex;
   align-items: center;
   left: 0;
-  width: 114px;
+  width: 120px;
   height: 144px;
-  background-color: ${p => p.theme.colors.accent};
-  box-shadow: 0px 7px 16px -12px rgba(104, 25, 8, 0.6);
-  margin-top: -16px;
+  // background-color: ${p => p.theme.colors.accent};
+  // box-shadow: 0px 7px 16px -12px rgba(104, 25, 8, 0.6);
+  margin-top: 0;
   transition: transform 0.25s ease;
 
   ${mediaqueries.desktop_medium`
@@ -381,15 +383,16 @@ const Hidden = styled.span`
 const ArcTextWrap = styled.div`
   position: absolute;
   display: inline-block;
-  width: 88px;
-  height: 88px;
+  width: 120px;
+  height: 120px;
   bottom: 12px;
-  left: 12px;
+  left: 0;
   animation: rotation 20s infinite linear;
   
   ${mediaqueries.tablet`
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
+    bottom: 22px;
   `}
 
 `;

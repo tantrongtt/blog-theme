@@ -26,21 +26,21 @@ const LogoContainer = styled.div`
 
   margin-left: auto;
   margin-right: auto;
-  margin-top: 32px;
+  margin-top: 0;
 
   svg {
     fill: ${p => p.theme.colors.primary};
   }
 
   .Logo {
-    width: 40px;
-    height: 40px;
+    width: 52px;
+    height: 52px;
   }
 
   ${mediaqueries.tablet`
     .Logo {
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 32px;
     }
   `}
 `;

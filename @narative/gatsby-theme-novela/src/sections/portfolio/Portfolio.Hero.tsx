@@ -45,7 +45,7 @@ const PortfolioHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
 export default PortfolioHero;
 
 const Hero = styled.div`
-    margin-top: -128px;
+    margin-top: -176px;
     position: relative;
     
     ${mediaqueries.tablet`
