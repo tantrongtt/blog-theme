@@ -38,7 +38,7 @@ module.exports.local = {
           }
           hero {
             full: childImageSharp {
-              fluid(maxWidth: 944, quality: 100) {
+              fluid(maxWidth: 1920, quality: 90) {
                 ${GatsbyFluid_withWebp}
               }
             }

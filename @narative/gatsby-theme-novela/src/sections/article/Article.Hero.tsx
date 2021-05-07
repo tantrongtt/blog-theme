@@ -146,6 +146,7 @@ const HeroHeading = styled(Headings.h1)`
   font-family: ${p => p.theme.fonts.title};
   margin-bottom: 25px;
   font-weight: ${p => p.theme.fontsWeight.bold};
+  text-align: center;
 
   ${mediaqueries.tablet`
     margin-bottom: 20px;
@@ -160,9 +161,7 @@ const Excerpt = styled(Headings.h3)`
   margin-top: 24px;
   font-weight: normal;
   line-height: 1.5;
-
-  ${mediaqueries.tablet`
-  `}
+  text-align: center;
 
   ${mediaqueries.phablet`
     font-size: 22px;
@@ -175,11 +174,12 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
   font-size: 14px;
   color: ${p => p.theme.colors.secondary};
   align-items: center;
+  justify-content: center;
   
   ${p => mediaqueries.phablet`
     flex-direction: column;
     align-items: left;
-    align-items: flex-start;
+    // align-items: flex-start;
 
     ${p.hasCoAUthors &&
       `
@@ -240,7 +240,8 @@ const HeroImage = styled.div`
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 944px;
+  // max-width: 944px;
+  max-width: 100%;
   overflow: hidden;
   margin: 0 auto;
 
@@ -250,7 +251,7 @@ const HeroImage = styled.div`
 
   ${mediaqueries.phablet`
     margin: 0 auto;
-    width: calc(100vw - 40px);
+    // width: calc(100vw - 40px);
     height: 220px;
 
     & > div {
