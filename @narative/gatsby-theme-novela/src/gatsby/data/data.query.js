@@ -38,17 +38,17 @@ module.exports.local = {
           }
           hero {
             full: childImageSharp {
-              fluid(maxWidth: 1920, quality: 90) {
+              fluid(maxWidth: 1920, quality: 95) {
                 ${GatsbyFluid_withWebp}
               }
             }
             regular: childImageSharp {
-              fluid(maxWidth: 653, quality: 100) {
+              fluid(maxWidth: 653, quality: 95) {
                 ${GatsbyFluid_withWebp}
               }
             }
             narrow: childImageSharp {
-              fluid(maxWidth: 457, quality: 100) {
+              fluid(maxWidth: 457, quality: 95) {
                 ${GatsbyFluid_withWebp}
               }
             }
@@ -86,22 +86,22 @@ module.exports.local = {
           body
           hero {
             full: childImageSharp {
-              fluid(maxWidth: 1920, quality: 100) {
+              fluid(maxWidth: 1920, quality: 95) {
                 ${GatsbyFluid_withWebp}
               }
             }
             regular: childImageSharp {
-              fluid(maxWidth: 1140, quality: 100) {
+              fluid(maxWidth: 1140, quality: 95) {
                 ${GatsbyFluid_withWebp}
               }
             }
             narrow: childImageSharp {
-              fluid(maxWidth: 457, quality: 100) {
+              fluid(maxWidth: 457, quality: 95) {
                 ${GatsbyFluid_withWebp}
               }
             }
             seo: childImageSharp {
-              fixed(width: 1200, quality: 100) {
+              fixed(width: 1200, quality: 80) {
                 src
               }
             }
@@ -131,17 +131,17 @@ module.exports.local = {
           body
           hero {
             full: childImageSharp {
-              fluid(maxWidth: 620, quality: 100) {
+              fluid(maxWidth: 620, quality: 95) {
                 ${GatsbyFluid_withWebp}
               }
             }
             narrow: childImageSharp {
-              fluid(maxWidth: 320, quality: 100) {
+              fluid(maxWidth: 320, quality: 95) {
                 ${GatsbyFluid_withWebp}
               }
             }
             seo: childImageSharp {
-              fixed(width: 1200, quality: 100) {
+              fixed(width: 1200, quality: 80) {
                 src
               }
             }
