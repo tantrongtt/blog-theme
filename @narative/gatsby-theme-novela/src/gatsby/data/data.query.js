@@ -48,7 +48,7 @@ module.exports.local = {
               }
             }
             narrow: childImageSharp {
-              fluid(maxWidth: 457, quality: 95) {
+              fluid(maxWidth: 457, quality: 90) {
                 ${GatsbyFluid_withWebp}
               }
             }
@@ -96,7 +96,7 @@ module.exports.local = {
               }
             }
             narrow: childImageSharp {
-              fluid(maxWidth: 457, quality: 95) {
+              fluid(maxWidth: 457, quality: 90) {
                 ${GatsbyFluid_withWebp}
               }
             }
