@@ -15,7 +15,7 @@ import { GridLayoutContext } from './Articles.List.Context';
 
 const siteQuery = graphql`
   {
-    file(relativePath: {eq: "default-image.jpg"}) {
+    file(relativePath: {eq: "default-image.png"}) {
       id
       childImageSharp {
         fluid(maxWidth: 640, quality: 100) {
