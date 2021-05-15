@@ -220,23 +220,27 @@ const PrismCSS = p => css`
 const iFrame = css`
   iframe {
     ${ARTICLE_WIDTH};
-    height: 734px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 32px;
+    
+    &.instagram {
+      margin-bottom: 32px;
+      height: 734px;
 
-    ${mediaqueries.desktop`
-      height: 560px;
-    `};
+      ${mediaqueries.desktop`
+        height: 560px;
+      `};
+  
+      ${mediaqueries.tablet`
+        height: 538px;
+      `};
+  
+      ${mediaqueries.phone`
+        height: 428px;
+        padding: 0;
+      `};
+    }
 
-    ${mediaqueries.tablet`
-      height: 538px;
-    `};
-
-    ${mediaqueries.phone`
-      height: 428px;
-      padding: 0;
-    `};
   }
 `;
 
