@@ -33,9 +33,7 @@ module.exports.local = {
           subscription
           featured
           body
-          audio {
-            publicURL
-          }
+          audio
           hero {
             full: childImageSharp {
               fluid(maxWidth: 1920, quality: 95) {

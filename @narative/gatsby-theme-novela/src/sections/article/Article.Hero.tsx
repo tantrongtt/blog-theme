@@ -55,8 +55,8 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
               <Image src={avatarResult.file.childImageSharp.fluid} />
             </AudioThumbnail>
             <AudioBar>
-              <AudioTitle>Voice, louder project</AudioTitle>
-              <audio controls src={article.audio.publicURL}></audio>
+              <AudioTitle>Voice, louder! project</AudioTitle>
+              <audio controls src={article.audio}></audio>
             </AudioBar>
           </AudioWrapper>
         }
@@ -220,10 +220,11 @@ const AudioWrapper = styled.div`
   grid-gap: 24px;
   position: relative;
   grid-template-columns: 160px 1fr;
-  margin-top: 40px;
+  margin: 40px auto 0 auto;
   align-items: center;
   box-shadow: ${p => p.theme.colors.neumorphismShadown};
   padding-right: 24px;
+  max-width: 680px;
 
   ${mediaqueries.tablet`
     grid-template-columns: 120px 1fr;
