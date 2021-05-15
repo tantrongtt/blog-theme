@@ -15,6 +15,7 @@ const StyledGatsbyImag = styled(GatsbyImg)`
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
+    object-fit: cover !important;
   }
 `;
 
