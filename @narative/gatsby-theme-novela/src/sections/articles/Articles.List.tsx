@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 
 import Headings from '@components/Headings';
 import Image, { ImagePlaceholder } from '@components/Image';
@@ -10,6 +10,21 @@ import mediaqueries from '@styles/media';
 import { IArticle } from '@types';
 
 import { GridLayoutContext } from './Articles.List.Context';
+
+// const imageDefault = '/preview.jpg';
+
+const siteQuery = graphql`
+  {
+    file(relativePath: {eq: "default-image.jpg"}) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 640, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
 
 interface ArticlesListProps {
   articles: IArticle[];
@@ -74,12 +89,13 @@ const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow }) => {
     imageSource &&
     Object.keys(imageSource).length !== 0 &&
     imageSource.constructor === Object;
+  const imageDefault = useStaticQuery(siteQuery).file.childImageSharp.fluid;
 
   return (
     <ArticleLink to={article.slug} data-a11y="false">
       <Item>
         <ImageContainer narrow={narrow} gridLayout={gridLayout}>
-          {hasHeroImage ? <Image src={imageSource} /> : <ImagePlaceholder />}
+          {hasHeroImage ? <Image src={imageSource} /> : <Image src={imageDefault} /> }
         </ImageContainer>
         <div>
           <Title dark hasOverflow={hasOverflow} gridLayout={gridLayout}>

@@ -38,7 +38,7 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
 
   return (
     <Hero>
-      <Header>
+      <Header hasHeroImage={hasHeroImage}>
         <HeroHeading>{article.title}</HeroHeading>
         <Excerpt>{article.excerpt}</Excerpt>
         <HeroSubtitle hasCoAUthors={hasCoAUthors}>
@@ -65,11 +65,9 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
 
 
       <HeroImage id="ArticleImage__Hero">
-        {hasHeroImage ? (
+        {hasHeroImage &&
           <Image src={article.hero.full} />
-        ) : (
-          <ImagePlaceholder />
-        )}
+        }
       </HeroImage>
     </Hero>
   );
@@ -113,12 +111,19 @@ const ArticleMeta = styled.div<{ hasCoAUthors: boolean }>`
   `}
 `;
 
-const Header = styled.header`
+const Header = styled.header<{ hasHeroImage: boolean }>`
   position: relative;
   z-index: 10;
-  margin:100px auto 56px;
-  padding-left: 68px;
+  margin: 100px auto 56px;
   max-width: 749px;
+  
+  ${p => `
+    ${!p.hasHeroImage &&
+      `
+        margin-bottom: 40px;
+      `
+    }
+  `}
 
   ${mediaqueries.desktop`
     padding-left: 53px;
@@ -132,9 +137,15 @@ const Header = styled.header`
     max-width: 480px;
   `}
 
-  ${mediaqueries.phablet`
+  ${p => mediaqueries.phablet`
     margin: 64px auto 64px;
     padding: 0 40px;
+
+    ${!p.hasHeroImage &&
+      `
+        margin-bottom: 0;
+      `
+    }
   `}
 
   @media screen and (max-height: 700px) {
@@ -179,7 +190,6 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
   ${p => mediaqueries.phablet`
     flex-direction: column;
     align-items: left;
-    // align-items: flex-start;
 
     ${p.hasCoAUthors &&
       `
@@ -252,7 +262,7 @@ const HeroImage = styled.div`
   ${mediaqueries.phablet`
     margin: 0 auto;
     // width: calc(100vw - 40px);
-    height: 220px;
+    // height: 220px;
 
     & > div {
       height: 220px;
