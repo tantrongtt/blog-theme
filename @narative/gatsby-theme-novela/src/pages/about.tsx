@@ -15,7 +15,7 @@ const siteQuery = graphql`
   file(relativePath: {eq: "Trong-White.jpg"}) {
     id
     childImageSharp {
-      fluid {
+      fluid(maxWidth: 540, quality: 100, base64Width: 1) {
         ...GatsbyImageSharpFluid
       }
     }

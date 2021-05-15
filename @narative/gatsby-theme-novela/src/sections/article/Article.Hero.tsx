@@ -15,7 +15,7 @@ const siteQuery = graphql`
   file(relativePath: {eq: "audio-recodrding-project.png"}) {
     id
     childImageSharp {
-      fluid {
+      fluid(maxWidth: 120, quality: 100, base64Width: 1) {
         ...GatsbyImageSharpFluid
       }
     }

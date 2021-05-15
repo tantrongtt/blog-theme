@@ -17,7 +17,7 @@ const siteQuery = graphql`
         url
         image {
           childImageSharp {
-            fluid(maxWidth: 360, quality: 95) {
+            fluid(maxWidth: 360, quality: 95, base64Width: 1) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -93,7 +93,7 @@ const cardLink = p => css`
     height: 4px;
     left: 50%;
     position: absolute;
-    background: ${p.theme.colors.secondary};
+    background: ${p.theme.colors.accent};
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
     z-index: 1;

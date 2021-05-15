@@ -36,17 +36,17 @@ module.exports.local = {
           audio
           hero {
             full: childImageSharp {
-              fluid(maxWidth: 1920, quality: 95) {
+              fluid(maxWidth: 1920, quality: 95, base64Width: 1) {
                 ${GatsbyFluid_withWebp}
               }
             }
             regular: childImageSharp {
-              fluid(maxWidth: 653, quality: 95) {
+              fluid(maxWidth: 653, quality: 95, base64Width: 1) {
                 ${GatsbyFluid_withWebp}
               }
             }
             narrow: childImageSharp {
-              fluid(maxWidth: 457, quality: 90) {
+              fluid(maxWidth: 457, quality: 95, base64Width: 1) {
                 ${GatsbyFluid_withWebp}
               }
             }
@@ -84,17 +84,17 @@ module.exports.local = {
           body
           hero {
             full: childImageSharp {
-              fluid(maxWidth: 1920, quality: 95) {
+              fluid(maxWidth: 1920, quality: 95, base64Width: 1) {
                 ${GatsbyFluid_withWebp}
               }
             }
             regular: childImageSharp {
-              fluid(maxWidth: 1140, quality: 95) {
+              fluid(maxWidth: 1140, quality: 95, base64Width: 1) {
                 ${GatsbyFluid_withWebp}
               }
             }
             narrow: childImageSharp {
-              fluid(maxWidth: 457, quality: 90) {
+              fluid(maxWidth: 457, quality: 90, base64Width: 1) {
                 ${GatsbyFluid_withWebp}
               }
             }
@@ -129,17 +129,17 @@ module.exports.local = {
           body
           hero {
             full: childImageSharp {
-              fluid(maxWidth: 620, quality: 98) {
+              fluid(maxWidth: 620, quality: 98, base64Width: 1) {
                 ${GatsbyFluid_withWebp}
               }
             }
             narrow: childImageSharp {
-              fluid(maxWidth: 320, quality: 95) {
+              fluid(maxWidth: 320, quality: 95, base64Width: 1) {
                 ${GatsbyFluid_withWebp}
               }
             }
             seo: childImageSharp {
-              fixed(width: 1200, quality: 80) {
+              fixed(width: 1200, quality: 80, base64Width: 1) {
                 src
               }
             }
@@ -164,17 +164,17 @@ module.exports.local = {
           slug
           avatar {
             small: childImageSharp {
-              fluid(maxWidth: 50, quality: 100) {
+              fluid(maxWidth: 50, quality: 100, base64Width: 1) {
                 ${GatsbyFluid_withWebp}
               }
             }
             medium: childImageSharp {
-              fluid(maxWidth: 100, quality: 100) {
+              fluid(maxWidth: 100, quality: 100, base64Width: 1) {
                 ${GatsbyFluid_withWebp}
               }
             }
             large: childImageSharp {
-              fluid(maxWidth: 328, quality: 100) {
+              fluid(maxWidth: 328, quality: 100, base64Width: 1) {
                 ${GatsbyFluid_withWebp}
               }
             }
