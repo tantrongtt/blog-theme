@@ -120,29 +120,29 @@ const Header = styled.header<{ hasHeroImage: boolean }>`
   ${p => `
     ${!p.hasHeroImage &&
       `
-        margin-bottom: 40px;
+        padding-bottom: 56px;
+        margin-bottom: 0;
+        border-bottom: solid 1px ${p.theme.colors.horizontalRule};
       `
     }
   `}
 
   ${mediaqueries.desktop`
-    padding-left: 53px;
     max-width: calc(507px + 53px);
     margin: 100px auto 70px;
   `}
 
   ${mediaqueries.tablet`
-    padding-left: 0;
-    margin: 100px auto 70px;
     max-width: 480px;
   `}
 
   ${p => mediaqueries.phablet`
-    margin: 64px auto 64px;
-    padding: 0 40px;
+    margin: 64px 20px 64px;
+    // padding: 0 32px;
 
     ${!p.hasHeroImage &&
       `
+        padding-bottom: 40px;
         margin-bottom: 0;
       `
     }
@@ -251,8 +251,7 @@ const HeroImage = styled.div`
   position: relative;
   z-index: 1;
   width: 100%;
-  // max-width: 944px;
-  max-width: 100%;
+  max-width: 944px;
   overflow: hidden;
   margin: 0 auto;
 
