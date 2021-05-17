@@ -9,6 +9,7 @@ import mediaqueries from '@styles/media';
 import { IArticle, IAuthor } from '@types';
 
 import ArticleAuthors from './Article.Authors';
+import AudioBar from '../others/Audio.Bar'
 
 const siteQuery = graphql`
 {
@@ -50,15 +51,10 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
         </HeroSubtitle>
 
         { article.audio && 
-          <AudioWrapper>
-            <AudioThumbnail>
-              <Image src={avatarResult.file.childImageSharp.fluid} />
-            </AudioThumbnail>
-            <AudioBar>
-              <AudioTitle>Voice, louder! project</AudioTitle>
-              <audio controls src={article.audio}></audio>
-            </AudioBar>
-          </AudioWrapper>
+          <AudioBar
+            title="Voice, louder! project"
+            audioURL={article.audio}
+          />
         }
         
       </Header>
@@ -213,38 +209,6 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
       margin-bottom: 5px;
     }
   `}
-`;
-
-const AudioWrapper = styled.div`
-  display: grid;
-  grid-gap: 24px;
-  position: relative;
-  grid-template-columns: 160px 1fr;
-  margin: 40px auto 0 auto;
-  align-items: center;
-  box-shadow: ${p => p.theme.colors.neumorphismShadown};
-  padding-right: 24px;
-  max-width: 680px;
-
-  ${mediaqueries.tablet`
-    grid-template-columns: 120px 1fr;
-  `}
-
-`;
-
-const AudioThumbnail = styled.div`
-
-`;
-
-const AudioBar  = styled.div`
-  audio {
-    width: 100%;
-  }
-`;
-
-const AudioTitle = styled.p`
-  margin-bottom: 8px;
-  color: ${p => p.theme.colors.secondary};
 `;
 
 const HeroImage = styled.div`
