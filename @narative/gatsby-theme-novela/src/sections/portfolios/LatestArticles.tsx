@@ -54,7 +54,7 @@ export default LatestArticles;
 
 const WriteContainer = styled.div`
   position: relative;
-  padding: 56px 0 160px;
+  padding: 80px 0 185px;
 `;
 
 const LatestArticle = styled(Link)`

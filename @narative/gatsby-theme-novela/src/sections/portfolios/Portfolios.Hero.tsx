@@ -105,7 +105,7 @@ const HeadingContainer = styled.div`
 `;
 
 const InfoText = styled.div`
-  font-size: 20px;
+  font-size: 24px;
   margin-top: 16px;
   line-height: 1.5;
   font-family: ${p => p.theme.fonts.body};
