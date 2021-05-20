@@ -34,7 +34,11 @@ const FeaturedArticles: React.FC<{}> = () => {
       <SectionTitle>Featured posts</SectionTitle>
       <List>
         {featuredArticles.map((article, index) =>(
-          <FeaturedCard to={article.node.slug} data-a11y="false" key={index}>
+          <FeaturedCard
+            to={article.node.slug} 
+            data-a11y="false" 
+            key={index}
+          >
             <DatePost>{article.node.date}</DatePost>
             <Title>{article.node.title}</Title>
             <Categoriest>{article.node.categories.join(' – ')}</Categoriest>
@@ -58,7 +62,7 @@ const List = styled.div`
   z-index: 1;
   display: flex;
   overflow-x: scroll;
-  padding: 32px 48px 48px 8px;
+  padding: 44px 48px 32px 8px;
   margin: -16px 0 24px 0;
 
   &::-webkit-scrollbar {
@@ -90,6 +94,7 @@ const FeaturedCard = styled(Link)`
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   display: flex;
   flex-direction: column;
+  transform: translateY(-1rem) rotate(3deg);
 
   ${mediaqueries.phablet`
     min-width: 190px;
@@ -102,7 +107,7 @@ const FeaturedCard = styled(Link)`
   }
 
   &:hover {
-    transform: translateY(-1rem) rotate(3deg);
+    transform: translateY(1rem) rotate(-3deg);
 
     & + a {
       transform: translateX(48px);

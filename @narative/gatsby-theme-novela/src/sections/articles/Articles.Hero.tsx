@@ -37,16 +37,6 @@ const ArticlesHero: React.FC<IAuthor> = ({ authors }) => {
   const results = useStaticQuery(authorQuery);
   const hero = results.site.edges[0].node.siteMetadata.hero;
   const numberOrPost = results.allArticle.totalCount;
-  
-  // Hide author
-  // const featuredAuthor = authors.find(author => author.featured);
-
-  // if (!featuredAuthor) {
-  //   throw new Error(`
-  //     No featured Author found.Trong test ssh.
-  //     Please ensure you have at least featured Author.
-  // `);
-  // }
 
   return (
     <Section narrow id="Articles__Hero">
