@@ -56,6 +56,7 @@ const AudioWrapper = styled.div`
 
   ${mediaqueries.tablet`
     grid-template-columns: 120px 1fr;
+    // margin: 0 24px;
   `}
 
 `;

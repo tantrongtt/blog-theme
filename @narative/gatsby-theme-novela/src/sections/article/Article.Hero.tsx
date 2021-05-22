@@ -156,7 +156,7 @@ const HeroHeading = styled(Headings.h1)`
   text-align: center;
 
   ${mediaqueries.tablet`
-    margin-bottom: 20px;
+    margin-bottom: 8px;
   `}
 `;
 
@@ -164,14 +164,14 @@ const Excerpt = styled(Headings.h3)`
   font-size: 28px;
   font-family: ${p => p.theme.fonts.body};
   color: ${p => p.theme.colors.secondary};
-  margin-bottom: 24px;
-  margin-top: 24px;
+  margin: 24px 0;
   font-weight: normal;
   line-height: 1.5;
   text-align: center;
 
   ${mediaqueries.phablet`
     font-size: 22px;
+    margin: 8px 0;
   `}
 `;
 

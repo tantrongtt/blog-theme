@@ -227,6 +227,8 @@ const Title = styled(Headings.h2)`
 
   ${mediaqueries.desktop`
     margin-bottom: 15px;
+    font-size: 24px;  
+
   `}
 
   ${mediaqueries.tablet`
