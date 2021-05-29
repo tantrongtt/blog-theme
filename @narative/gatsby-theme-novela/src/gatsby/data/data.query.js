@@ -36,7 +36,7 @@ module.exports.local = {
           audio
           hero {
             full: childImageSharp {
-              fluid(maxWidth: 940, quality: 95, base64Width: 1) {
+              fluid(maxWidth: 944, quality: 95, base64Width: 1) {
                 ${GatsbyFluid_withWebp}
               }
             }
