@@ -72,7 +72,7 @@ const Archive = ({ location }) => {
         <Wrapper>
           {decsYears.map((year, index) => (
             <ArticlesWrap key={index}>
-              <Year>{year}</Year>
+              <Year>{year}<Sup>{articlesByAscYear[year].length}</Sup></Year>
               <ArticlesInYear>
                 {articlesByAscYear[year].map((item, index) => (
                   <ArticlesItem to={item.slug} data-a11y="false" key={index}>
@@ -155,4 +155,15 @@ const Title = styled.h2`
 
 const Wrapper = styled.div`
   margin-bottom: 120px;
+`;
+
+const Sup = styled.sup`
+  vertical-align: top;
+  font-family: ${p => p.theme.fonts.body};
+  font-weight: ${p => p.theme.fontsWeight.regular};
+  font-size: 16px;
+  text-transform: uppercase;
+  color: ${p => p.theme.colors.accent};
+  margin-left: 4px;
+  transition: color 0.33s var(--ease-out-quart);
 `;
