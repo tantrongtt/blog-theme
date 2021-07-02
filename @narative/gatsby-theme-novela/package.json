@@ -31,6 +31,7 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@netlify/plugin-gatsby": "^1.0.3",
     "gatsby": "^2.15.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
