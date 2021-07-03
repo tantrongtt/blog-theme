@@ -30,7 +30,7 @@ const siteMetadata = {
 
 const plugins = [
   {
-    resolve: "@narative/gatsby-theme-novela",
+    resolve: "@tantrongtt/gatsby-theme-trong",
     options: {
       contentPosts: "content/posts",
       contentAuthors: "content/authors",
@@ -79,9 +79,9 @@ const plugins = [
  *
  * To enanble Contentful you must
  * 1. Create a new Space on contentful.com
- * 2. Import the Contentful Model from @narative/gatsby-theme-novela/conteful
+ * 2. Import the Contentful Model from @tantrongtt/gatsby-theme-trong/conteful
  * 3. Add .env to www/ (see www/env.example)
- * 4. Enable contentful as a source in this file for @narative/gatsby-theme-novela
+ * 4. Enable contentful as a source in this file for @tantrongtt/gatsby-theme-trong
  */
 if (process.env.CONTENTFUL_SPACE_ID && process.env.CONTENTFUL_ACCESS_TOKEN) {
   plugins.push({

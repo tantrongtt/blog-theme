@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-theme-novela-workspace",
+  "name": "gatsby-theme-trong-workspace",
   "private": true,
   "version": "0.0.1",
   "main": "index.js",
@@ -13,10 +13,11 @@
     "publish": "yarn lerna version && yarn lerna publish"
   },
   "workspaces": [
-    "@narative/gatsby-theme-novela",
+    "@tantrongtt/gatsby-theme-trong",
     "www"
   ],
   "devDependencies": {
+    "@netlify/plugin-gatsby": "^1.0.3",
     "eslint": "^6.2.2",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.1.0",

@@ -41,11 +41,14 @@ Rebuilding the location while browsing and searching for items is one of the mos
 
 ###### The Challenge
 ## A better location treatment works across all countries and categories
-High-level goals were to:
-- Make it easy to understand and easy to use for everyone, in different countries
-- Increase content relevance on discovering and search journey
-- Give buyers a more engaging and relevant content
 
+We have three high-level problems that we need to solve:
+
+1. How to make the location picker easier to use for everyone in different countries?
+
+2. How to make it works for different categories (General goods vs Property vs Home Service) when the searching behaviour is very different?
+
+3. How to increase the relevancy on browse and search journey?
 
 ## My role
 I led the design of the new location picker across iOS, Android, mobile, and desktop Web since the outset of the project in May 2020.
@@ -99,7 +102,7 @@ Many people don’t know how to use the radius location picker:
   <img src="./images/image-location-1.png" />
 </div>
 
-Some people don’t they know can filter by locations
+Some people don’t know they can filter by locations
 <div class="Image__Small">
   <img src="./images/image-location-2.png" />
 </div>
@@ -125,7 +128,7 @@ Qualitative insights from users are not enough to convince stakeholders to inves
 
 Note: For confidentiality reasons, I have omitted the actual values for these metrics.
 
-###### Frame the solution
+###### Frame the problem  
 ## The importance of location
 Carousell is a classified marketplace, more than half of the listings are used ones. People usually do meet-ups to check the item before buying it. So knowing the location around their areas is very important.
 
@@ -184,6 +187,11 @@ Many times, designers have many ideas and don't know which one is better. The sa
 
 First, I tried to come up with many ideas as possible. Then I picked some and share it with the whole Product Designer team to discuss designs.
 
+<div class="Image__Small">
+  <img src="./images/image-location-14_3.png" />
+  <figcaption>Location picker flow ideas</figcaption>
+</div>
+
 Then I updated the design and shared it with stakeholders, including PMs from other teams, category managers, and country managers to get aligned with the direction.
 
 After that, there were still two ideas that we can’t agree on. So I used both two ideas to do a usability test to see how people interact.
@@ -211,14 +219,26 @@ With the insights from the test, we are more confident with the solution and get
       Moving out from radius location, replace it with location areas.
     </p>
     <p>
-     They can search for the most common administrative areas. And it is localised for different countries. 
-    </p>
-    <p>
-      In the Philippines, people can search by Province, City, or Baranggay. In Singapore, people can browse by MRT, Estate, or District.
+     They can search for the most common administrative areas. 
     </p>
   </div>
   <div class="PaddingMobile">
     <video class="Round" autoplay loop muted playsinline src="./images/video-new-1-new.mp4"></video>
+  </div>
+</div>
+
+<div class="Grid Col2-ShortLeft Small">
+  <div>
+    <h4>Localise for different countries</h4>
+    <p>
+      For big countries like the Philippines, Malasia, Indonesia, we focus on search experience. People can search by Province, City, or Baranggay.
+    </p>
+    <p>
+      For city-state countries like Singapore, Hong Kong, Taiwan, people can also browse by MRT, Area, or Neighbourhood.
+    </p>
+  </div>
+  <div class="PaddingMobile">
+    <video class="Round" autoplay loop muted playsinline src="./images/video-new-1_2.mp4"></video>
   </div>
 </div>
 
@@ -245,23 +265,33 @@ Quickly filter listings by personal locations
   <div>
     <h4>For Property</h4>
     <p>
-      In Singapore, people can browse by District, MRT, or Estate.
+     Location is the most important criteria when searching for any house or room. So we replace the global search bar with the location picker.
+    </p>
+    <p>
+     In Singapore, property users can browse by Area District, Estate, MRT or neighbourhood.
     </p>
   </div>
   <div class="PaddingMobile">
-    <video class="Round" autoplay loop muted playsinline src="./images/video-sg-property.mp4"></video>
+    <video class="Round" autoplay loop muted playsinline src="./images/video-sg-property-2.mp4"></video>
   </div>
 </div>
 
-<div class="Grid Col2-ShortLeft Small">
+#### Property listing card
+
+For property, we created 2 new listing card layout, list view and gallery view, to show more information. Location of a house is an important information to help people find suitable houses easier.
+
+<div class="Grid Col3 Medium Grid-Gap-Medium">
   <div>
-    <h4>Listing card</h4>
-    <p>
-      For property, we created a different listing card, list view, to show more information. Location of a house is an important information to help people find suitable houses easier.
-    </p>
+    <img src="./images/property-card-grid.png" />
+    <figcaption>[OLD] Grid view</figcaption>
   </div>
-  <div class="PaddingMobile">
-    <video class="Round" autoplay loop muted playsinline src="./images/video-new-7-property.mp4"></video>
+  <div>
+    <img src="./images/property-card-gallery.png" />
+    <figcaption>[NEW] Gallery view for scenic route</figcaption>
+  </div>
+  <div>
+    <img src="./images/property-card-list.png" />
+    <figcaption>[NEW] List view for detail driven</figcaption>
   </div>
 </div>
 
@@ -274,9 +304,12 @@ Quickly filter listings by personal locations
     <p>
       We didn't have it before because we didn't want our competitors to know where we are in the market. But it’s useful info for buyers while search. So we have to find a way to balance it.
     </p>
+    <p>
+      So we decided to show it by package: 10,000+ 7,000+ 5,000+ 1,000+ and exact number if the number is smaller than 1,000.
+    </p>
   </div>
   <div class="PaddingMobile">
-    <video class="Round" autoplay loop muted playsinline src="./images/video-result.mp4"></video>
+    <video class="Round" autoplay loop muted playsinline src="./images/video-result-2.mp4"></video>
   </div>
 </div>
 
@@ -298,12 +331,95 @@ iOS, Android, Mobile Web and Desktop Web
   </div>
 </div>
 
-## What next?
-We’re going to launch this feature first in the Philippines, then Singapore, Hong Kong, Taiwan, and other countries in Southeast Asia. But it should not become just a one-time delivery. In Carousell, we always iterate the product with data and post-launch research.
+###### The launching
+## The first release: low usage but good Conversion Rate (CR)
+After 5 months of design and implementation, we released it first in PH in Dec 2020. One month went by, we got the data and some qualitative feedback from users:
+
+* The usage is lower than we expected: lesser people use the location picker, comparing to the old one.
+* But on the other hand, the CR funnel improved a lot. The funnel when people browse → Chat increases by +18%.
+
+At least, we know that the new solution brings a better experience, people can find things they want easier. Then the main questions are **why the usage is very low** and **how to increase the usage.**
+
+Then I collaborated with a PM, DA to analyze the data. The reason we found out is the sticky behavior of the entry point.
+
+Why did we know? Because before we launched the new design, we had made a change in the behavior of the entry point of the old location picker. The usage declined from the time we made that change.
+
+<div class="Image__Small">
+  <img src="./images/launch-order-chart.png" />
+</div>
+
+Besides data, we also receive some user feedback sent to our User Voice team.
+
+*“The items do not appear compared to the old search mechanics" – Kim*
+
+*“Location search was accurate in the previous version. Updates showing (listings) very far locations from my city which is not accurate” – Mico*
+
+So not only the design, but we need to change also the logic of the result page.
+
+
+### Next iterations
+When we want to increase the usage of a feature, we are tempted to use onboarding or tooltip to tell people about that new feature. That's always our first thinking.
+
+But explaining to people how to do something is a sign of bad design. So what we did?
+
+**Sticky entry point**
+
+<div class="Grid Col2 Small Grid-Gap-Medium">
+  <div>
+    <video class="Round" autoplay loop muted playsinline src="./images/launch-sticky-old.mp4"></video>
+    <figcaption>[1st release] The entry point is flown when scrolling down</figcaption>
+  </div>
+  <div>
+    <video class="Round" autoplay loop muted playsinline src="./images/launch-sticky-new.mp4"></video>
+    <figcaption>[New release] Make the entry sticky on top and adding a chevron to make it more visible and tappable.</figcaption>
+  </div>
+</div>
+
+**A/B test the logic filtering listings**
+
+<div class="Grid Col2 Small Grid-Gap-Medium">
+  <div>
+    <img src="./images/launch-result-old.png" />
+    <figcaption>[1st release] Results include both mail delivery (no meetup) and meetup listings</figcaption>
+  </div>
+  <div>
+    <img src="./images/launch-result-new.png" />
+    <figcaption>[New release] Showing only listings with matched meetup locations</figcaption>
+  </div>
+</div>
+
+**Changing the order of administrative**
+<div class="Grid Col2 Small Grid-Gap-Medium">
+  <div>
+    <img src="./images/launch-order-old.png" />
+    <figcaption>[1st release] Sort from top to bottom</figcaption>
+  </div>
+  <div>
+    <img src="./images/launch-order-new.png" />
+    <figcaption>[New release] MCity moves to the top due to the usage</figcaption>
+  </div>
+</div>
+
+###### The impacts
+## Positive results and much more to do
+
+Launching is only the first step. In Carousell, we always iterate the product with data and post-launch research.
+
+Through some iterations that learning from data and user feedback, we got great impacts:
+
+- +80% in feature usage
+- +18% in browse → chat
+- +28% in browse → quality chat
+
+We launched it first for the Philippines, Singapore, Hong Kong. Then Taiwan, Malaysia, and Indonesia later.
+
+*For confidentiality reasons I have omitted the actual values for these metrics.*
+
+---
 
 ## Credit
 My role: Design Owner
 
 Thanks for the design feedbacks and discussion from designer and PM folks: Felipe, Mag, Keith, Huiyi, Ashutosh, Jianyuan.
 
-Thanks to all engineers who worked hard on this project: Beemo & Darren (iOS); Tim & Lance Wang (Android); Jenny, Chenghau & Andrew (Web); and genius back-end guys Steven, Tuan.
+Thanks to all engineers who worked hard on this project: Beemo & Darren (iOS); Tim & Lance Wang (Android); Jenny, Chenghua & Andrew (Web); and genius back-end guys Steven, Tuan & CCC.
