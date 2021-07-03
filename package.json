@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-theme-novela-workspace",
-  "private": true,
+  "name": "gatsby-theme-trong-workspace",
+  "private": false,
   "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
