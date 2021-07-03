@@ -96,7 +96,7 @@ You can also view the completed [example repository](https://github.com/narative
 mkdir novela-site && cd novela-site
 
 # Add all required depedencies
-yarn add react react-dom gatsby @narative/gatsby-theme-novela
+yarn add react react-dom gatsby @tantrongtt/gatsby-theme-trong
 ```
 
 ### Step 2: Folder structure
@@ -122,22 +122,22 @@ The recommended project structure for your content and site looks like this:
     └── package.json
 ```
 
-### Step 3: Using `@narative/gatsby-theme-novela`
+### Step 3: Using `@tantrongtt/gatsby-theme-trong`
 
-You must add `@narative/gatsby-theme-novela` as a plugin in `gatsby-config.js`.
-`@narative/gatsby-theme-novela` is configurable through plugin options but we will use the defaults for now.
+You must add `@tantrongtt/gatsby-theme-trong` as a plugin in `gatsby-config.js`.
+`@tantrongtt/gatsby-theme-trong` is configurable through plugin options but we will use the defaults for now.
 
 ```js
 // gatsby-config.js
 
 module.exports = {
-  plugins: ['@narative/gatsby-theme-novela'],
+  plugins: ['@tantrongtt/gatsby-theme-trong'],
 };
 ```
 
 ---
 
-Once you've setup `@narative/gatsby-theme-novela` plugin in `gatsby-config.js` you can start creating your first Posts. In order to create a Post you also need at least one Author.
+Once you've setup `@tantrongtt/gatsby-theme-trong` plugin in `gatsby-config.js` you can start creating your first Posts. In order to create a Post you also need at least one Author.
 
 ### Step 4: Adding an Author
 
@@ -221,7 +221,7 @@ module.exports = {
       },
     ],
   },
-  plugins: ['@narative/gatsby-theme-novela'],
+  plugins: ['@tantrongtt/gatsby-theme-trong'],
 };
 ```
 
@@ -282,7 +282,7 @@ plugins: [
     },
   },
   {
-    resolve: '@narative/gatsby-theme-novela',
+    resolve: '@tantrongtt/gatsby-theme-trong',
     options: {
       sources: {
         contentful: true,
@@ -298,7 +298,7 @@ Finally, import the Contentful Model from Novela to get started. Novela Contentf
 
 [Contentful space import docs](https://github.com/contentful/contentful-cli/tree/master/docs/space/import)
 
-Once you have your project setup with `gatsby-source-contentful` and `@narative/gatsby-theme-novela` and your Contentful space is setup with the imported model you are good to go.
+Once you have your project setup with `gatsby-source-contentful` and `@tantrongtt/gatsby-theme-trong` and your Contentful space is setup with the imported model you are good to go.
 
 # Customization
 
@@ -314,7 +314,7 @@ By default Author pages are not enabled. They can be enabled through the plugin 
 module.exports = {
   plugins: [
     {
-      resolve: '@narative/gatsby-theme-novela',
+      resolve: '@tantrongtt/gatsby-theme-trong',
       options: {
         authorsPage: true,
       },
@@ -333,7 +333,7 @@ First, you must create a theme file and then you can override `novelaTheme` valu
 ```js
 // src/gatsby-plugin-theme-ui/index.js
 
-import novelaTheme from '@narative/gatsby-theme-novela/src/gatsby-plugin-theme-ui';
+import novelaTheme from '@tantrongtt/gatsby-theme-trong/src/gatsby-plugin-theme-ui';
 
 export default {
   ...novelaTheme,
@@ -439,7 +439,7 @@ Then configure the plugins
 ```js
 plugins: [
   {
-    resolve: '@narative/gatsby-theme-novela',
+    resolve: '@tantrongtt/gatsby-theme-trong',
     options: {
       contentPosts: 'content/posts',
       contentAuthors: 'content/authors',
@@ -499,7 +499,7 @@ It is recommended to use the Default options, but if your project requires somet
 ```js
 plugins: [
   {
-    resolve: '@narative/gatsby-theme-novela',
+    resolve: '@tantrongtt/gatsby-theme-trong',
     options: {
       contentPosts: 'content/posts',
       contentAuthors: 'content/authors',
