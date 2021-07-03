@@ -1,7 +1,7 @@
 {
   "name": "@tantrongtt/gatsby-theme-trong",
-  "author": "dennis@narative.co",
-  "repository": "https://github.com/narative/gatsby-theme-novela",
+  "author": "tantrongtt@gmail.com",
+  "repository": "https://github.com/tantrongtt/blog-theme",
   "version": "0.10.3",
   "main": "index.js",
   "license": "MIT",
